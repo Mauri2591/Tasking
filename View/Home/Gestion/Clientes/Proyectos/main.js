@@ -1,5 +1,5 @@
 var tabla;
-var URL = "https://10.75.246.125/Tasking";
+var URL = "https://10.75.246.125/tasking_stg";
 //***************  Borradores  *****************************
 $(document).ready(function () {
 
