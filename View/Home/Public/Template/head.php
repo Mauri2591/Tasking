@@ -46,7 +46,8 @@
         #dt-search-1,
         #dt-search-2,
         #dt-search-3,
-        #dt-search-4 {
+        #dt-search-4,
+        #dt-search-5 {
             height: 20px;
         }
 

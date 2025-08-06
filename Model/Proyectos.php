@@ -148,6 +148,18 @@ class Proyectos extends Conexion
     tc.cat_nom,
     tp.pais_nombre,
     pg.id AS id_proyecto_gestionado,
+    pr.posicion_recurrencia,
+    pr.cantidad_total_recurrencias,
+    (
+        SELECT COUNT(*) 
+        FROM proyecto_recurrencia prr 
+        WHERE prr.id_proyecto_gestionado = pg.id
+    ) AS recurrencias_total, 
+    (
+        SELECT COUNT(*) 
+        FROM proyecto_recurrencia prr 
+        WHERE prr.id_proyecto_gestionado = pg.id AND prr.est = 0
+    ) AS recurrencias_inactivas,
     GROUP_CONCAT(tmu.usu_nom SEPARATOR ',<br>') AS usu_nom_asignado
 FROM proyecto_cantidad_servicios pcs
 JOIN proyectos p ON pcs.proy_id = p.proy_id
@@ -160,6 +172,14 @@ LEFT JOIN tm_categoria tc ON pg.cat_id = tc.cat_id
 LEFT JOIN sectores s ON pg.sector_id = s.sector_id
 LEFT JOIN usuario_proyecto AS ua ON pg.id = ua.id_proyecto_gestionado
 LEFT JOIN tm_usuario tmu ON ua.usu_asignado = tmu.usu_id
+LEFT JOIN (
+    SELECT 
+        id AS id_proyecto_gestionado,
+        id_proyecto_cantidad_servicios,
+        ROW_NUMBER() OVER (PARTITION BY id_proyecto_cantidad_servicios ORDER BY id) AS posicion_recurrencia,
+        COUNT(*) OVER (PARTITION BY id_proyecto_cantidad_servicios) AS cantidad_total_recurrencias
+    FROM proyecto_gestionado
+) AS pr ON pg.id = pr.id_proyecto_gestionado
 WHERE pcs.est = 1 
   AND (pg.estados_id IS NULL OR pg.estados_id = 14)
 GROUP BY 
@@ -173,11 +193,22 @@ GROUP BY
     s.sector_nombre,
     tc.cat_nom,
     tp.pais_nombre,
-    pg.id
+    pg.id,
+    pr.posicion_recurrencia,
+    pr.cantidad_total_recurrencias
 ORDER BY pcs.proy_id ASC, pcs.numero_servicio ASC";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function update_proyecto_recurrencia($id)
+    {
+        $conn = parent::get_conexion();
+        $sql = "UPDATE proyecto_recurrencia SET est=0 WHERE id=:id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 
     public function get_proyectos_nuevos_x_sector($sector_id)
@@ -307,7 +338,6 @@ ORDER BY id_proyecto_cantidad_servicios ASC";
     public function get_proyectos_incident_response($sector_id, $estados_id, $cat_id)
     {
         $conn = parent::get_conexion();
-
         $sql = "SELECT 
         pcs.id AS id_proyecto_cantidad_servicios,
         pcs.proy_id, 
@@ -998,13 +1028,31 @@ ORDER BY id_proyecto_cantidad_servicios ASC";
         $stmt->execute();
     }
 
-    public function insert_proyecto_recurrencia(int $id_proyecto_gestionado)
+    public function insert_proyecto_recurrencia(int $id_proyecto_gestionado, int $cat_id)
     {
         $conn = parent::get_conexion();
-        $sql = "INSERT INTO proyecto_recurrencia (id_proyecto_gestionado) VALUES (:id_proyecto_gestionado)";
+        $sql = "INSERT INTO proyecto_recurrencia (id_proyecto_gestionado,cat_id) VALUES (:id_proyecto_gestionado,:cat_id)";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':id_proyecto_gestionado', $id_proyecto_gestionado, PDO::PARAM_INT);
+        $stmt->bindValue(':cat_id', $cat_id, PDO::PARAM_INT);
         $stmt->execute();
+    }
+
+
+    public function get_proyectos_recurrentes()
+    {
+        $conn = parent::get_conexion();
+        $sql = "SELECT pg.titulo, tc.cat_nom, c.client_rs, pg.id, COUNT(pr.id) AS recurrencias_total, 
+        COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas FROM proyecto_gestionado pg 
+        JOIN tm_categoria tc ON pg.cat_id = tc.cat_id LEFT JOIN proyecto_recurrencia pr 
+        ON pg.id = pr.id_proyecto_gestionado JOIN proyecto_cantidad_servicios pcs 
+        ON pg.id_proyecto_cantidad_servicios = pcs.id JOIN proyectos p 
+        ON pcs.proy_id = p.proy_id JOIN clientes c ON p.client_id = c.client_id 
+        GROUP BY pg.titulo, tc.cat_nom, c.client_rs, pg.id 
+        HAVING COUNT(CASE WHEN pr.est = 1 THEN 1 END) > 0";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insert_usuarios_proyecto(int $id_proyecto_gestionado, $usu_asignado)
@@ -1032,7 +1080,33 @@ ORDER BY id_proyecto_cantidad_servicios ASC";
     public function get_datos_proyecto_creado(int $id_proyecto_cantidad_servicios)
     {
         $conn = parent::get_conexion();
-        $sql = "SELECT proyecto_gestionado.*, dimensionamiento.hs_dimensionadas FROM proyecto_gestionado LEFT JOIN dimensionamiento ON proyecto_gestionado.id=dimensionamiento.id_proyecto_gestionado WHERE id_proyecto_cantidad_servicios=? AND proyecto_gestionado.est=1";
+        // $sql = "SELECT proyecto_gestionado.*, dimensionamiento.hs_dimensionadas FROM proyecto_gestionado LEFT JOIN dimensionamiento ON proyecto_gestionado.id=dimensionamiento.id_proyecto_gestionado WHERE id_proyecto_cantidad_servicios=? AND proyecto_gestionado.est=1";
+        $sql = "SELECT 
+    pg.*, 
+    d.hs_dimensionadas,
+    pr_info.cantidad_recurrencias,
+    (
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY pr.id)
+        FROM proyecto_recurrencia pr
+        WHERE pr.id_proyecto_gestionado = pg.id
+        LIMIT 1
+    ) AS posicion_recurrencia
+FROM 
+    proyecto_gestionado pg
+LEFT JOIN 
+    dimensionamiento d ON pg.id = d.id_proyecto_gestionado
+LEFT JOIN (
+    SELECT 
+        id_proyecto_gestionado,
+        COUNT(*) AS cantidad_recurrencias
+    FROM 
+        proyecto_recurrencia
+    GROUP BY id_proyecto_gestionado
+) AS pr_info ON pg.id = pr_info.id_proyecto_gestionado
+WHERE 
+    pg.id_proyecto_cantidad_servicios = ?
+    AND pg.est = 1";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1, htmlspecialchars($id_proyecto_cantidad_servicios, ENT_QUOTES), PDO::PARAM_INT);
         $stmt->execute();

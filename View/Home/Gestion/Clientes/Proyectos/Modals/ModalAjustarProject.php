@@ -8,10 +8,12 @@
                 <!-- <code>Los campos con (*) son obligatorios</code> -->
                 <div class="mt-4 live-preview">
                     <form id="form_alta_proyecto" enctype="multipart/form-data">
+
                         <!-- <input type="text" id="id_proyecto_proyecto_cantidad_servicios">-->
 
                         <input type="hidden" hidden id="id_proyecto_cantidad_servicios">
                         <input type="hidden" hidden id="id_proyecto_gestionado">
+                        <input type="text" id="posicion_recurrencia">
 
                         <span class="mb-2 badge bg-light border border-primary fs-10 text-primary"
                             style="font-weight: bold;">Datos del
@@ -42,6 +44,8 @@
 
                                 <div class="mb-3 col-sm-2">
                                     <span class="badge bg-light fs-10 mb-1 text-dark">Recurrencia</span>
+                                    <span class="badge border border-dark bg-success text-light fs-12"
+                                        id="valor_recurrencia" style="display: none;"></span>
                                     <select id="combo_recurrente_proy_nuevo" class="form-select form-select-sm"
                                         aria-label=".form-select-sm example">
                                         <option value="0">NO</option>

@@ -22,6 +22,16 @@ class Usuarios extends Conexion
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function editarPerfil($usu_id, $usu_pass)
+    {
+        $conn = parent::get_conexion();
+        $sql = "UPDATE tm_usuario SET usu_pass=:usu_pass WHERE usu_id=:usu_id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(":usu_pass", password_hash($usu_pass, PASSWORD_DEFAULT), PDO::PARAM_STR);
+        $stmt->bindValue(":usu_id", $usu_id, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
     public function insert_usuario($usu_crea, $usu_nom, $usu_correo, $usu_tel, $sector_id)
     {
         $conn = parent::get_conexion();

@@ -162,7 +162,7 @@ switch ($_GET['proy']) {
         );
 
         for ($i = 1; $i <= $cantidad_recurrencias; $i++) {
-            $proyecto->insert_proyecto_recurrencia($id_proyecto_gestionado);
+            $proyecto->insert_proyecto_recurrencia($id_proyecto_gestionado, $_POST['cat_id']);
         }
 
         //Inserto el pm
@@ -223,6 +223,9 @@ switch ($_GET['proy']) {
         $proyecto->finalizar_proyecto_sin_implementar_proyecto_cantidad_servicios($_POST['id']);
         break;
 
+    case 'update_proyecto_recurrencia':
+        $proyecto->update_proyecto_recurrencia($_POST['id']);
+        break;
 
     case 'get_proyectos_nuevos_borrador':
         $datos = $proyecto->get_proyectos_nuevos_borrador();
@@ -236,6 +239,7 @@ switch ($_GET['proy']) {
                 : '<span class="badge bg-light text-dark">' . $row['client_rs'] . '</span>';
             $sub_array[] = '<span class="badge bg-light text-dark">' . $row['pais_nombre'] . '</span';
             $sub_array[] = '<span class="badge bg-light text-dark">' . $row['creador_proy'] . '</span';
+            $sub_array[] = $row['recurrencias_total'] != null ? '<span class="badge bg-success text-light text-light border border-dark">' . $row['posicion_recurrencia'] . "/" . $row['recurrencias_total'] . '</span' : "-";
             $color_clase = isset($colores[$row['sector_nombre']]) ? $colores[$row['sector_nombre']] : 'bg-light text-dark';
             $sub_array[] = empty($row['sector_nombre'])
                 ? '<span>Sin asignar</span>'
@@ -372,12 +376,34 @@ switch ($_GET['proy']) {
         // 6. Si hay recurrencia, inserta clones
         if (isset($_POST['recurrencia']) && $_POST['recurrencia'] != "0") {
             for ($i = 1; $i <= (int) $_POST['recurrencia']; $i++) {
-                $proyecto->insert_proyecto_recurrencia((int) $_POST['id_proyecto_gestionado']);
+                $proyecto->insert_proyecto_recurrencia((int) $_POST['id_proyecto_gestionado'], (int) $_POST['cat_id']);
             }
         }
 
         break;
 
+    case 'get_proyectos_recurrentes':
+        $datos = $proyecto->get_proyectos_recurrentes();
+        $data = array();
+        foreach ($datos as $row) {
+            $sub_array = array();
+            $sub_array[] = strlen($row['client_rs']) > 70
+                ? '<span class="badge bg-light text-dark">' . substr($row['client_rs'], 0, 67) . '...' . '</span>'
+                : '<span class="badge bg-light text-dark">' . $row['client_rs'] . '</span>';
+            $sub_array[] = '<span class="badge bg-light text-dark">' . $row['cat_nom'] . '</span>';
+            $sub_array[] = '<p class="text-center py-0"><span class="badge border border-dark bg-primary fw-bold fs-10 text-light">' . $row['recurrencias_total'] . '</span></p>';
+            $sub_array[] = '<p class="text-center py-0"><span class="badge border border-dark bg-success fw-bold fs-10 text-light">' . $row['recurrencias_inactivas'] . '</span></p>';
+            $sub_array[] = '<span type="button" onclick="gestionar_proy_recurrente(' . $row['id'] . ')" data-placement="top" title="Gestionar Recurrente"><i class="ri-send-plane-fill text-primary fs-16"></i></span>';
+            $data[] = $sub_array;
+        }
+        $results = array(
+            "sEcho" => 1,
+            "iTotalRecords" => count($data),
+            "iTotalDisplayRecords" => count($data),
+            "aaData" => $data
+        );
+        echo json_encode($results);
+        break;
 
     case 'get_host_proy_borrador':
         $datos = $proyecto->get_host_proy_borrador($_POST['id_proyecto_cantidad_servicios']);
@@ -452,9 +478,9 @@ switch ($_GET['proy']) {
         foreach ($data as $key => $val) {
             if (!empty($val['usu_nom'])) {
 ?>
-<li class="mb-1 text-dark fs-12"><?php echo $val['usu_nom'] . '-' . $val['sector_nombre'] ?>
-</li>
-<?php
+                <li class="mb-1 text-dark fs-12"><?php echo $val['usu_nom'] . '-' . $val['sector_nombre'] ?>
+                </li>
+        <?php
             }
         }
         break;
@@ -1246,43 +1272,43 @@ switch ($_GET['proy']) {
     case 'get_datos_usuario_finalizador_proyecto':
         $datos = $proyecto->get_datos_usuario_finalizador_proyecto($_POST['id_proyecto_cantidad_servicios']);
         ?>
-<span>Finalizado el <?php echo $datos->fecha_cierre_proyecto; ?></span>
-<span>por <?php echo $datos->usu_nom; ?></span>
-<span>de <?php echo $datos->sector_nombre; ?></span>
-<?php
+        <span>Finalizado el <?php echo $datos->fecha_cierre_proyecto; ?></span>
+        <span>por <?php echo $datos->usu_nom; ?></span>
+        <span>de <?php echo $datos->sector_nombre; ?></span>
+        <?php
         break;
 
     case 'get_descripciones_proyecto':
         $data = $proyecto->get_descripciones_proyecto($_POST['id_proyecto_cantidad_servicios']);
         foreach ($data as $key => $val) {
         ?>
-<div class="d-flex align-items-center mt-4">
-    <div class="flex-grow-1 ms-2">
-        <h6 id="colaborador_descripcion" class="mb-1"><a>
-                <i class="ri-add-circle-fill fs-14 text-secondary"></i>
-                <?php echo $val['usu_nom'] ?> <span class="text-muted">(<span id="fecha_descripcion"
-                        class="text-muted fs-12"><?php echo $val['fech_crea'] ?></span>)</span></a>
-        </h6>
-        <p id="sector_descripcion" class="text-muted fs-11" style="margin-left: 1rem;">
-            <?php echo $val['sector_nombre'] ?></p>
-    </div>
-</div>
-<div class="d-flex">
-    <p class="ms-5"><strong style="margin-right: 10px;">Nota:</strong> <?php echo $val['descripcion_proyecto'] ?></p>
-    <?php if (isset($_SESSION) && $_SESSION['usu_id'] == $val['usu_crea'] && $val['estados_id'] != 3) : ?>
-    <br><i id="btn_eliminar_descripcion" data-placement="top" title="Eliminar" type="button"
-        onclick="eliminar_descripcion(<?php echo $val['id'] ?>)"
-        class=" ri-delete-bin-2-fill ms-3 fs-14 text-danger"></i>
-    <?php endif; ?>
-</div>
+            <div class="d-flex align-items-center mt-4">
+                <div class="flex-grow-1 ms-2">
+                    <h6 id="colaborador_descripcion" class="mb-1"><a>
+                            <i class="ri-add-circle-fill fs-14 text-secondary"></i>
+                            <?php echo $val['usu_nom'] ?> <span class="text-muted">(<span id="fecha_descripcion"
+                                    class="text-muted fs-12"><?php echo $val['fech_crea'] ?></span>)</span></a>
+                    </h6>
+                    <p id="sector_descripcion" class="text-muted fs-11" style="margin-left: 1rem;">
+                        <?php echo $val['sector_nombre'] ?></p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <p class="ms-5"><strong style="margin-right: 10px;">Nota:</strong> <?php echo $val['descripcion_proyecto'] ?></p>
+                <?php if (isset($_SESSION) && $_SESSION['usu_id'] == $val['usu_crea'] && $val['estados_id'] != 3) : ?>
+                    <br><i id="btn_eliminar_descripcion" data-placement="top" title="Eliminar" type="button"
+                        onclick="eliminar_descripcion(<?php echo $val['id'] ?>)"
+                        class=" ri-delete-bin-2-fill ms-3 fs-14 text-danger"></i>
+                <?php endif; ?>
+            </div>
 
-<?php if (isset($val['captura_imagen']) && !empty($val['captura_imagen'])) {
+            <?php if (isset($val['captura_imagen']) && !empty($val['captura_imagen'])) {
             ?>
-<div style="width: 85%;" class="ms-5">
-    <img src="<?php echo $val['captura_imagen'] ?>" width="100%" height="100%"
-        alt="Imagen de Nota n° <?php echo $val['id'] ?>">
-</div>
-<?php
+                <div style="width: 85%;" class="ms-5">
+                    <img src="<?php echo $val['captura_imagen'] ?>" width="100%" height="100%"
+                        alt="Imagen de Nota n° <?php echo $val['id'] ?>">
+                </div>
+            <?php
             }
 
             if (!empty($val['carpeta_documentos_proy']) && !empty($val['documento'])) {
@@ -1343,8 +1369,8 @@ switch ($_GET['proy']) {
                 echo '</div>';
             }
             ?>
-<br>
-<?php
+            <br>
+        <?php
         }
         break;
 
@@ -1380,28 +1406,28 @@ switch ($_GET['proy']) {
         $data = $proyecto->get_sectores_x_sector_id($_SESSION['sector_id']);
         foreach ($data as $val) {
         ?>
-<div class="col" style="min-width: 150px; flex: 0 0 auto; text-align: center;">
-    <div class="py-1 border border-light">
-        <h5 class="text-muted text-uppercase fs-13 text-center px-1">
-            <?php echo $val['cat_nom'] ?>
-            <?php if (!empty($val['total'])): ?>
-            <i title="Nuevos para trabajar" class="ri-add-circle-fill text-success fs-16 float-end align-middle"></i>
-            <?php else: ?>
-            <i title="Sin proyectos para trabajar"
-                class="ri-indeterminate-circle-fill text-danger fs-16 float-end align-middle"></i>
-            <?php endif; ?>
-        </h5>
-        <div class="d-flex align-items-center">
-            <div class="flex-grow-1 ms-3">
-                <h5 class="mb-0">
-                    <span class="counter-value" data-target="<?php echo $val['total'] ?>">
-                        <?php echo $val['total'] ?>
-                    </span>
-                </h5>
+            <div class="col" style="min-width: 150px; flex: 0 0 auto; text-align: center;">
+                <div class="py-1 border border-light">
+                    <h5 class="text-muted text-uppercase fs-13 text-center px-1">
+                        <?php echo $val['cat_nom'] ?>
+                        <?php if (!empty($val['total'])): ?>
+                            <i title="Nuevos para trabajar" class="ri-add-circle-fill text-success fs-16 float-end align-middle"></i>
+                        <?php else: ?>
+                            <i title="Sin proyectos para trabajar"
+                                class="ri-indeterminate-circle-fill text-danger fs-16 float-end align-middle"></i>
+                        <?php endif; ?>
+                    </h5>
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mb-0">
+                                <span class="counter-value" data-target="<?php echo $val['total'] ?>">
+                                    <?php echo $val['total'] ?>
+                                </span>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 <?php
         }
         break;

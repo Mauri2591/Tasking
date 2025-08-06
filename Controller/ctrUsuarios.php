@@ -24,6 +24,17 @@ switch ($_GET['usuarios']) {
         echo json_encode($results);
         break;
 
+    case 'editarPerfil':
+        $usu_pass = $_POST['usu_pass'];
+        if (!empty($usu_pass)) {
+            $usuarios->editarPerfil($_SESSION['usu_id'], $usu_pass);
+            echo json_encode(["Success" => "Password guardada"]);
+        } else {
+            echo json_encode(["Error" => "Password vacia"]);
+            http_response_code(400);
+        }
+        break;
+
     case 'get_sectores':
         $data = $usuarios->get_sectores();
         $option = '';

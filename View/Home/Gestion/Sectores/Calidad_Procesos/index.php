@@ -265,7 +265,7 @@ if (isset($_SESSION['usu_id'])) {
 } ?>
 
     <script>
-        var URL = "https://10.75.246.125/Tasking";
+        var URL = "http://127.0.0.1/tasking";
 
         var sector_usu_id =
             "<?php echo isset($_SESSION['sector_id']) ? $_SESSION['sector_id'] : "" ?>";

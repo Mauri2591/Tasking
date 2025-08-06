@@ -37,6 +37,7 @@ if (isset($_SESSION['usu_id'])) {
     </style>
     <?php
     include_once __DIR__ . "/Public/Template/main_content.php";
+    include_once __DIR__ . "/../Home/Gestion/Usuarios/Modals/mdlEditaPerfil.php";
     ?>
     <div class="page-content">
         <div class="container-fluid">
@@ -229,6 +230,60 @@ if (isset($_SESSION['usu_id'])) {
                     "json"
                 );
             });
+
+            function editarPerfil() {
+                let formData = new FormData();
+                formData.append('usu_pass', document.getElementById("usu_pass").value);
+                return formData;
+            }
+
+            function btnEditPerfil() {
+                $("#modalEditPerfil").modal("show");
+                document.getElementById("formEditPerfil").reset();
+            }
+
+            function btnFormEditPerfil() {
+                let data = editarPerfil();
+                let usu_pas = data.get('usu_pass');
+                if (usu_pas == '') {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Error",
+                        text: "Password vacia, debe ingresar una nueva password",
+                        showConfirmButton: true,
+                        showCancelButton: true
+                    })
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "../../Controller/ctrUsuarios.php?usuarios=editarPerfil",
+                        data: {
+                            "usu_pass": usu_pas
+                        },
+                        dataType: "json",
+                        success: function(response) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Bien",
+                                text: "Password cambiada correctamente",
+                                showConfirmButton: false,
+                                showCancelButton: false,
+                                timer: 1200
+                            })
+                            $("#modalEditPerfil").modal("hide");
+                        },
+                        error: function(err) {
+                            Swal.fire({
+                                icon: "warning",
+                                title: "Error",
+                                text: "Password vacia, debe ingresar una nueva password",
+                                showConfirmButton: true,
+                                showCancelButton: true
+                            })
+                        }
+                    });
+                }
+            }
         </script>
     <?php endif; ?>
 <?php } else {

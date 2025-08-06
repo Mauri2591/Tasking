@@ -22,21 +22,21 @@ CLAVE VPN KALI:
 VPN: sudo openfortivpn 181.105.177.1:10443 --username=kali --trusted-cert c6ec6fea7b08997cb1e9da71f8fc04ca3561700482bcc9a8f5244c06b0e76a99 -v
 Pass: Kali2022*
 *********************************************************
-ip: 10.75.246.125  Puerto: 22
+ip: 127.0.0.1  Puerto: 22
 root vulma
 HnWc&7qR8#x8Ht
 ----------
 Phpmyadmin
-https://10.75.246.125/phpmyadmin/index.php?route=/sql&server=1&db=vulma_gestion&table=tm_usuario&pos=0
-10.75.246.125:phpmyadmin
+https://127.0.0.1/phpmyadmin/index.php?route=/sql&server=1&db=vulma_gestion&table=tm_usuario&pos=0
+127.0.0.1:phpmyadmin
 root:wp%Q6RgJ&3SdWR
 *********************************************************
 WinSCP
-10.75.246.125
+127.0.0.1
 ehmssplocal:7Q5k7&AS$7K48U
 *********************************************************
 ssh
-Para el server: host = ssh ehmssplocal@10.75.246.125 pass = C4mp30n3s2023 
+Para el server: host = ssh ehmssplocal@127.0.0.1 pass = C4mp30n3s2023 
 *********************************************************
 USUARIO Y PASS JENKINS:
 mauri2591
