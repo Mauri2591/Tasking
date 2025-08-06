@@ -1,5 +1,5 @@
 var tabla;
-var URL = "https://127.0.0.1/tasking";
+var URL = "https://10.75.246.125/tasking_stg";
 //***************  Borradores  *****************************
 $(document).ready(function () {
     tabla = $("#table_proyectos_borrador").dataTable({

@@ -23,10 +23,55 @@ class Proyectos extends Conexion
         $stmt->execute();
     }
 
+    public function get_proyectos_recurrentes()
+    {
+        $conn = parent::get_conexion();
+        $sql = "SELECT pg.titulo, tc.cat_nom, c.client_rs, pg.id, COUNT(pr.id) AS recurrencias_total, 
+        COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas FROM proyecto_gestionado pg 
+        JOIN tm_categoria tc ON pg.cat_id = tc.cat_id LEFT JOIN proyecto_recurrencia pr 
+        ON pg.id = pr.id_proyecto_gestionado JOIN proyecto_cantidad_servicios pcs 
+        ON pg.id_proyecto_cantidad_servicios = pcs.id JOIN proyectos p 
+        ON pcs.proy_id = p.proy_id JOIN clientes c ON p.client_id = c.client_id 
+        GROUP BY pg.titulo, tc.cat_nom, c.client_rs, pg.id 
+        HAVING COUNT(CASE WHEN pr.est = 1 THEN 1 END) > 0";
+        //         $sql = "SELECT 
+        //     c.client_rs, 
+        //     DATE_FORMAT(p.fech_crea, '%d-%m-%Y') AS fech_crea_formateada,
+        //     tp.pais_nombre,
+        //     pg.id AS id_proyecto_gestionado,
+        //     COUNT(pr.id) AS recurrencias_total,
+        //     COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas
+        // FROM proyecto_gestionado pg
+        // JOIN proyecto_cantidad_servicios pcs ON pg.id_proyecto_cantidad_servicios = pcs.id
+        // JOIN proyectos p ON pcs.proy_id = p.proy_id
+        // JOIN clientes c ON p.client_id = c.client_id
+        // JOIN tm_pais tp ON c.pais_id = tp.pais_id
+        // LEFT JOIN proyecto_recurrencia pr ON pr.id_proyecto_gestionado = pg.id
+        // WHERE pg.id = ?
+        // GROUP BY c.client_rs, p.fech_crea, tp.pais_nombre, pg.id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function get_client_y_pais_para_proy_borrador($proy_id)
     {
         $conn = parent::get_conexion();
-        $sql = "SELECT clientes.client_rs, tm_pais.pais_nombre, DATE_FORMAT(fech_crea,'%d-%m-%Y') AS fech_crea FROM proyectos LEFT JOIN clientes ON proyectos.client_id=clientes.client_id LEFT JOIN tm_pais ON clientes.pais_id=tm_pais.pais_id WHERE proy_id=?";
+        $sql = "SELECT 
+    c.client_rs, 
+    DATE_FORMAT(p.fech_crea, '%d-%m-%Y') AS fech_crea_formateada,
+    tp.pais_nombre,
+    pg.id AS id_proyecto_gestionado,
+    COUNT(pr.id) AS recurrencias_total,
+    COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas
+FROM proyecto_gestionado pg
+JOIN proyecto_cantidad_servicios pcs ON pg.id_proyecto_cantidad_servicios = pcs.id
+JOIN proyectos p ON pcs.proy_id = p.proy_id
+JOIN clientes c ON p.client_id = c.client_id
+JOIN tm_pais tp ON c.pais_id = tp.pais_id
+LEFT JOIN proyecto_recurrencia pr ON pr.id_proyecto_gestionado = pg.id
+WHERE pg.id = ?
+GROUP BY c.client_rs, p.fech_crea, tp.pais_nombre, pg.id";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1, htmlspecialchars($proy_id, ENT_QUOTES), PDO::PARAM_INT);
         $stmt->execute();
@@ -1036,23 +1081,6 @@ ORDER BY id_proyecto_cantidad_servicios ASC";
         $stmt->bindValue(':id_proyecto_gestionado', $id_proyecto_gestionado, PDO::PARAM_INT);
         $stmt->bindValue(':cat_id', $cat_id, PDO::PARAM_INT);
         $stmt->execute();
-    }
-
-
-    public function get_proyectos_recurrentes()
-    {
-        $conn = parent::get_conexion();
-        $sql = "SELECT pg.titulo, tc.cat_nom, c.client_rs, pg.id, COUNT(pr.id) AS recurrencias_total, 
-        COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas FROM proyecto_gestionado pg 
-        JOIN tm_categoria tc ON pg.cat_id = tc.cat_id LEFT JOIN proyecto_recurrencia pr 
-        ON pg.id = pr.id_proyecto_gestionado JOIN proyecto_cantidad_servicios pcs 
-        ON pg.id_proyecto_cantidad_servicios = pcs.id JOIN proyectos p 
-        ON pcs.proy_id = p.proy_id JOIN clientes c ON p.client_id = c.client_id 
-        GROUP BY pg.titulo, tc.cat_nom, c.client_rs, pg.id 
-        HAVING COUNT(CASE WHEN pr.est = 1 THEN 1 END) > 0";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insert_usuarios_proyecto(int $id_proyecto_gestionado, $usu_asignado)
