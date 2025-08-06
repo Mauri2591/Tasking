@@ -62,12 +62,16 @@
                             <a class="dropdown-item" onclick="btnEditPerfil()" href="#"><i
                                     class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                     class="align-middle">Mi Perfil</span></a>
+
+                            <!-- *********** Botones Mensajes y Tareas *************** -->
                             <!-- <a class="dropdown-item" href="apps-chat.html"><i
                                     class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i>
                                 <span class="align-middle">Mensajes</span></a>
                             <a class="dropdown-item" href="apps-tasks-kanban.html"><i
                                     class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i>
                                 <span class="align-middle">Tareas</span></a> -->
+                            <!-- *********** Botones Mensajes y Tareas *************** -->
+
                             <a class="dropdown-item" href="<?php echo URL . "/View/Home/Logout.php" ?>"><i
                                     class=" ri-logout-box-line text-muted fs-16 align-middle me-1"></i>
                                 <span class="align-middle">Salir</span></a>
