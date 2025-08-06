@@ -57,21 +57,23 @@ class Proyectos extends Conexion
     public function get_client_y_pais_para_proy_borrador($proy_id)
     {
         $conn = parent::get_conexion();
-        $sql = "SELECT 
-    c.client_rs, 
-    DATE_FORMAT(p.fech_crea, '%d-%m-%Y') AS fech_crea_formateada,
-    tp.pais_nombre,
-    pg.id AS id_proyecto_gestionado,
-    COUNT(pr.id) AS recurrencias_total,
-    COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas
-FROM proyecto_gestionado pg
-JOIN proyecto_cantidad_servicios pcs ON pg.id_proyecto_cantidad_servicios = pcs.id
-JOIN proyectos p ON pcs.proy_id = p.proy_id
-JOIN clientes c ON p.client_id = c.client_id
-JOIN tm_pais tp ON c.pais_id = tp.pais_id
-LEFT JOIN proyecto_recurrencia pr ON pr.id_proyecto_gestionado = pg.id
-WHERE pg.id = ?
-GROUP BY c.client_rs, p.fech_crea, tp.pais_nombre, pg.id";
+        //         $sql = "SELECT 
+        //     c.client_rs, 
+        //     DATE_FORMAT(p.fech_crea, '%d-%m-%Y') AS fech_crea,
+        //     tp.pais_nombre,
+        //     pg.id AS id_proyecto_gestionado,
+        //     COUNT(pr.id) AS recurrencias_total,
+        //     COUNT(CASE WHEN pr.est = 0 THEN 1 END) AS recurrencias_inactivas
+        // FROM proyecto_gestionado pg
+        // JOIN proyecto_cantidad_servicios pcs ON pg.id_proyecto_cantidad_servicios = pcs.id
+        // JOIN proyectos p ON pcs.proy_id = p.proy_id
+        // JOIN clientes c ON p.client_id = c.client_id
+        // JOIN tm_pais tp ON c.pais_id = tp.pais_id
+        // LEFT JOIN proyecto_recurrencia pr ON pr.id_proyecto_gestionado = pg.id
+        // WHERE pg.id = ?
+        // GROUP BY c.client_rs, p.fech_crea, tp.pais_nombre, pg.id";
+        $sql = "SELECT clientes.client_rs, tm_pais.pais_nombre, DATE_FORMAT(fech_crea,'%d-%m-%Y') AS fech_crea FROM proyectos LEFT JOIN clientes ON proyectos.client_id=clientes.client_id LEFT JOIN tm_pais ON clientes.pais_id=tm_pais.pais_id WHERE proy_id=?";
+
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1, htmlspecialchars($proy_id, ENT_QUOTES), PDO::PARAM_INT);
         $stmt->execute();
@@ -1110,31 +1112,31 @@ ORDER BY id_proyecto_cantidad_servicios ASC";
         $conn = parent::get_conexion();
         // $sql = "SELECT proyecto_gestionado.*, dimensionamiento.hs_dimensionadas FROM proyecto_gestionado LEFT JOIN dimensionamiento ON proyecto_gestionado.id=dimensionamiento.id_proyecto_gestionado WHERE id_proyecto_cantidad_servicios=? AND proyecto_gestionado.est=1";
         $sql = "SELECT 
-    pg.*, 
-    d.hs_dimensionadas,
-    pr_info.cantidad_recurrencias,
-    (
-        SELECT 
-            ROW_NUMBER() OVER (ORDER BY pr.id)
-        FROM proyecto_recurrencia pr
-        WHERE pr.id_proyecto_gestionado = pg.id
-        LIMIT 1
-    ) AS posicion_recurrencia
-FROM 
-    proyecto_gestionado pg
-LEFT JOIN 
-    dimensionamiento d ON pg.id = d.id_proyecto_gestionado
-LEFT JOIN (
-    SELECT 
-        id_proyecto_gestionado,
-        COUNT(*) AS cantidad_recurrencias
-    FROM 
-        proyecto_recurrencia
-    GROUP BY id_proyecto_gestionado
-) AS pr_info ON pg.id = pr_info.id_proyecto_gestionado
-WHERE 
-    pg.id_proyecto_cantidad_servicios = ?
-    AND pg.est = 1";
+            pg.*, 
+            d.hs_dimensionadas,
+            pr_info.cantidad_recurrencias,
+            (
+                SELECT 
+                    ROW_NUMBER() OVER (ORDER BY pr.id)
+                FROM proyecto_recurrencia pr
+                WHERE pr.id_proyecto_gestionado = pg.id
+                LIMIT 1
+            ) AS posicion_recurrencia
+        FROM 
+            proyecto_gestionado pg
+        LEFT JOIN 
+            dimensionamiento d ON pg.id = d.id_proyecto_gestionado
+        LEFT JOIN (
+            SELECT 
+                id_proyecto_gestionado,
+                COUNT(*) AS cantidad_recurrencias
+            FROM 
+                proyecto_recurrencia
+            GROUP BY id_proyecto_gestionado
+        ) AS pr_info ON pg.id = pr_info.id_proyecto_gestionado
+        WHERE 
+            pg.id_proyecto_cantidad_servicios = ?
+            AND pg.est = 1";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(1, htmlspecialchars($id_proyecto_cantidad_servicios, ENT_QUOTES), PDO::PARAM_INT);
         $stmt->execute();

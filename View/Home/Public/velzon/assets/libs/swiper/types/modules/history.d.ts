@@ -1,11 +1,11 @@
-export interface HistoryMethods {}
+export interface HistoryMethods { }
 
-export interface HistoryEvents {}
+export interface HistoryEvents { }
 
 export interface HistoryOptions {
   /**
    * Swiper page root, useful to specify when you use Swiper history mode not on root website page.
-   * For example can be `https://my-website.com/` or `https://my-website.com/subpage/` or `/subpage/`
+   * For example can be `http://my-website.com/` or `http://my-website.com/subpage/` or `/subpage/`
    *
    *
    * @default ''

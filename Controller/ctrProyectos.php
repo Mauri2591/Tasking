@@ -277,7 +277,7 @@ switch ($_GET['proy']) {
                 ? '<span>Sin asignar</span>'
                 : '<span class="badge border border-primary ' . $color_clase . '">' . $row['sector_nombre'] . '</span>';
             $sub_array[] = isset($row['usu_nom_asignado']) == '' ? '<span>Sin asignar</span>' : '<span class="badge border border-primary bg-light text-dark">' . $row['usu_nom_asignado'] . '</span>';
-            $sub_array[] = '<span type="button" onclick="gestionar_proy_borrador(' . $row['proy_id'] . ',' . $row['id_proyecto_cantidad_servicios'] . ',' . $row['id'] . ')" data-placement="top" title="Gestionar Borrador"><i class="ri-send-plane-fill text-primary fs-16"></i></span>';
+            $sub_array[] = '<span type="button" onclick="gestionar_proy_borrador(' . $row['proy_id'] . ',' . $row['id_proyecto_cantidad_servicios'] . ',' . $row['id_proyecto_gestionado'] . ')" data-placement="top" title="Gestionar Borrador"><i class="ri-send-plane-fill text-primary fs-16"></i></span>';
             $data[] = $sub_array;
         }
         $results = array(

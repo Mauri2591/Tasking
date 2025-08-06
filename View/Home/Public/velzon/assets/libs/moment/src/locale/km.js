@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Cambodian [km]
-//! author : Kruy Vanna : https://github.com/kruyvanna
+//! author : Kruy Vanna : http://github.com/kruyvanna
 
 import moment from '../moment';
 
@@ -82,8 +82,8 @@ export default moment.defineLocale('km', {
         y: 'មួយឆ្នាំ',
         yy: '%d ឆ្នាំ'
     },
-    dayOfMonthOrdinalParse : /ទី\d{1,2}/,
-    ordinal : 'ទី%d',
+    dayOfMonthOrdinalParse: /ទី\d{1,2}/,
+    ordinal: 'ទី%d',
     preparse: function (string) {
         return string.replace(/[១២៣៤៥៦៧៨៩០]/g, function (match) {
             return numberMap[match];

@@ -27,7 +27,7 @@ root vulma
 HnWc&7qR8#x8Ht
 ----------
 Phpmyadmin
-https://127.0.0.1/phpmyadmin/index.php?route=/sql&server=1&db=vulma_gestion&table=tm_usuario&pos=0
+http://127.0.0.1/phpmyadmin/index.php?route=/sql&server=1&db=vulma_gestion&table=tm_usuario&pos=0
 127.0.0.1:phpmyadmin
 root:wp%Q6RgJ&3SdWR
 *********************************************************
@@ -55,7 +55,7 @@ user: mrgonzalez@pentest.com
 pass: P4$$w0rD#
 *********************************************************
 UDEMY
-link curso metasploit (https://tecom.udemy.com/course/metasploit-cero-experto-practicas-walter-coto-alvaro-chirou-2021/learn/lecture/26519468#overview)
+link curso metasploit (http://tecom.udemy.com/course/metasploit-cero-experto-practicas-walter-coto-alvaro-chirou-2021/learn/lecture/26519468#overview)
 Usuario: macaruso2@teco.com.ar
 Password:wSEpj7h5vUS2FYM
 *********************************************************

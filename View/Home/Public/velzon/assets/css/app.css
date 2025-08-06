@@ -3,11 +3,11 @@
 Template Name: Velzon - Admin & Dashboard Template
 Author: Themesbrand
 Version: 1.6.0
-Website: https://themesbrand.com/
+Website: http://themesbrand.com/
 Contact: support@themesbrand.com
 File: Main Css File
 */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @font-face {
   font-family: "hkgrotesk";
   src: url("../fonts/hkgrotesk-light.eot");
@@ -2178,7 +2178,7 @@ File: Main Css File
  * 
  * Copyright 2014-2018 Alfiana E. Sibuea and other contributors 
  * Released under the MIT license 
- * https://github.com/fians/Waves/blob/master/LICENSE */
+ * http://github.com/fians/Waves/blob/master/LICENSE */
 .waves-effect {
   position: relative;
   cursor: pointer;

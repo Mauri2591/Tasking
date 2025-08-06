@@ -1,16 +1,16 @@
 
 # Toastify
 
-![Built with JavaScript](https://img.shields.io/badge/Built%20with-JavaScript-red?style=for-the-badge&logo=javascript)
+![Built with JavaScript](http://img.shields.io/badge/Built%20with-JavaScript-red?style=for-the-badge&logo=javascript)
 
-[![toastify-js](https://img.shields.io/badge/toastify--js-1.11.2-brightgreen.svg)](https://www.npmjs.com/package/toastify-js)
-![MIT License](https://img.shields.io/npm/l/toastify-js)
+[![toastify-js](http://img.shields.io/badge/toastify--js-1.11.2-brightgreen.svg)](http://www.npmjs.com/package/toastify-js)
+![MIT License](http://img.shields.io/npm/l/toastify-js)
 
 Toastify is a lightweight, vanilla JS toast notification library.
 
 ## Demo
 
-[Click here](https://apvarun.github.io/toastify-js/)
+[Click here](http://apvarun.github.io/toastify-js/)
 
 ## Features
 
@@ -60,16 +60,16 @@ import "toastify-js/src/toastify.css"
 To start using **Toastify**, add the following CSS on to your page.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 ```
 
 And the script at the bottom of the page
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/toastify-js"></script>
 ```
 
-> Files are delivered via the CDN service provided by [jsdeliver](https://www.jsdelivr.com/)
+> Files are delivered via the CDN service provided by [jsdeliver](http://www.jsdelivr.com/)
 
 ## Documentation
 
@@ -77,7 +77,7 @@ And the script at the bottom of the page
 Toastify({
   text: "This is a toast",
   duration: 3000,
-  destination: "https://github.com/apvarun/toastify-js",
+  destination: "http://github.com/apvarun/toastify-js",
   newWindow: true,
   close: true,
   gravity: "top", // `top` or `bottom`
@@ -92,7 +92,7 @@ Toastify({
 
 > Toast messages will be centered on devices with screen width less than 360px.
 
-* See the [changelog](https://github.com/apvarun/toastify-js/blob/master/CHANGELOG.md)
+* See the [changelog](http://github.com/apvarun/toastify-js/blob/master/CHANGELOG.md)
 
 ### Add own custom classes
 
@@ -171,10 +171,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/AStoker">
+      <a href="http://github.com/AStoker">
         <img
           alt="AStoker"
-          src="https://avatars.githubusercontent.com/u/2907279?v=4"
+          src="http://avatars.githubusercontent.com/u/2907279?v=4"
           width="117"
         />
         <br />
@@ -182,10 +182,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/caiomoura1994">
+      <a href="http://github.com/caiomoura1994">
         <img
           alt="caiomoura1994"
-          src="https://avatars.githubusercontent.com/u/9389139?v=4"
+          src="http://avatars.githubusercontent.com/u/9389139?v=4"
           width="117"
         />
         <br />
@@ -193,10 +193,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/rndevfx">
+      <a href="http://github.com/rndevfx">
         <img
           alt="rndevfx"
-          src="https://avatars.githubusercontent.com/u/5052076?v=4"
+          src="http://avatars.githubusercontent.com/u/5052076?v=4"
           width="117"
         />
         <br />
@@ -204,10 +204,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/1ess">
+      <a href="http://github.com/1ess">
         <img
           alt="1ess"
-          src="https://avatars.githubusercontent.com/u/36092926?v=4"
+          src="http://avatars.githubusercontent.com/u/36092926?v=4"
           width="117"
         />
         <br />
@@ -215,10 +215,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/d4rn0k">
+      <a href="http://github.com/d4rn0k">
         <img
           alt="d4rn0k"
-          src="https://avatars.githubusercontent.com/u/2183269?v=4"
+          src="http://avatars.githubusercontent.com/u/2183269?v=4"
           width="117"
         />
         <br />
@@ -226,10 +226,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/danielkaiser80">
+      <a href="http://github.com/danielkaiser80">
         <img
           alt="danielkaiser80"
-          src="https://avatars.githubusercontent.com/u/33827555?v=4"
+          src="http://avatars.githubusercontent.com/u/33827555?v=4"
           width="117"
         />
         <br />
@@ -239,10 +239,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/skjnldsv">
+      <a href="http://github.com/skjnldsv">
         <img
           alt="skjnldsv"
-          src="https://avatars.githubusercontent.com/u/14975046?v=4"
+          src="http://avatars.githubusercontent.com/u/14975046?v=4"
           width="117"
         />
         <br />
@@ -250,10 +250,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/chasedeanda">
+      <a href="http://github.com/chasedeanda">
         <img
           alt="chasedeanda"
-          src="https://avatars.githubusercontent.com/u/8203134?v=4"
+          src="http://avatars.githubusercontent.com/u/8203134?v=4"
           width="117"
         />
         <br />
@@ -261,10 +261,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/chrisgraham">
+      <a href="http://github.com/chrisgraham">
         <img
           alt="chrisgraham"
-          src="https://avatars.githubusercontent.com/u/195389?v=4"
+          src="http://avatars.githubusercontent.com/u/195389?v=4"
           width="117"
         />
         <br />
@@ -272,10 +272,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Wachiwi">
+      <a href="http://github.com/Wachiwi">
         <img
           alt="Wachiwi"
-          src="https://avatars.githubusercontent.com/u/4199845?v=4"
+          src="http://avatars.githubusercontent.com/u/4199845?v=4"
           width="117"
         />
         <br />
@@ -283,10 +283,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/FeixuRuins">
+      <a href="http://github.com/FeixuRuins">
         <img
           alt="FeixuRuins"
-          src="https://avatars.githubusercontent.com/u/66232834?v=4"
+          src="http://avatars.githubusercontent.com/u/66232834?v=4"
           width="117"
         />
         <br />
@@ -294,10 +294,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/gavinhungry">
+      <a href="http://github.com/gavinhungry">
         <img
           alt="gavinhungry"
-          src="https://avatars.githubusercontent.com/u/744538?v=4"
+          src="http://avatars.githubusercontent.com/u/744538?v=4"
           width="117"
         />
         <br />
@@ -307,10 +307,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/haydster7">
+      <a href="http://github.com/haydster7">
         <img
           alt="haydster7"
-          src="https://avatars.githubusercontent.com/u/4540595?v=4"
+          src="http://avatars.githubusercontent.com/u/4540595?v=4"
           width="117"
         />
         <br />
@@ -318,10 +318,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/joaquinwojcik">
+      <a href="http://github.com/joaquinwojcik">
         <img
           alt="joaquinwojcik"
-          src="https://avatars.githubusercontent.com/u/3205737?v=4"
+          src="http://avatars.githubusercontent.com/u/3205737?v=4"
           width="117"
         />
         <br />
@@ -329,10 +329,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/juliushaertl">
+      <a href="http://github.com/juliushaertl">
         <img
           alt="juliushaertl"
-          src="https://avatars.githubusercontent.com/u/3404133?v=4"
+          src="http://avatars.githubusercontent.com/u/3404133?v=4"
           width="117"
         />
         <br />
@@ -340,10 +340,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/mort3za">
+      <a href="http://github.com/mort3za">
         <img
           alt="mort3za"
-          src="https://avatars.githubusercontent.com/u/510242?v=4"
+          src="http://avatars.githubusercontent.com/u/510242?v=4"
           width="117"
         />
         <br />
@@ -351,10 +351,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Sandip124">
+      <a href="http://github.com/Sandip124">
         <img
           alt="Sandip124"
-          src="https://avatars.githubusercontent.com/u/37034590?v=4"
+          src="http://avatars.githubusercontent.com/u/37034590?v=4"
           width="117"
         />
         <br />
@@ -362,10 +362,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Tadaz">
+      <a href="http://github.com/Tadaz">
         <img
           alt="Tadaz"
-          src="https://avatars.githubusercontent.com/u/10881931?v=4"
+          src="http://avatars.githubusercontent.com/u/10881931?v=4"
           width="117"
         />
         <br />
@@ -375,10 +375,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/t12ung">
+      <a href="http://github.com/t12ung">
         <img
           alt="t12ung"
-          src="https://avatars.githubusercontent.com/u/9781423?v=4"
+          src="http://avatars.githubusercontent.com/u/9781423?v=4"
           width="117"
         />
         <br />
@@ -386,10 +386,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/victorfeijo">
+      <a href="http://github.com/victorfeijo">
         <img
           alt="victorfeijo"
-          src="https://avatars.githubusercontent.com/u/8865899?v=4"
+          src="http://avatars.githubusercontent.com/u/8865899?v=4"
           width="117"
         />
         <br />
@@ -397,10 +397,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/fiatjaf">
+      <a href="http://github.com/fiatjaf">
         <img
           alt="fiatjaf"
-          src="https://avatars.githubusercontent.com/u/1653275?v=4"
+          src="http://avatars.githubusercontent.com/u/1653275?v=4"
           width="117"
         />
         <br />
@@ -408,10 +408,10 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/prousseau-korem">
+      <a href="http://github.com/prousseau-korem">
         <img
           alt="prousseau-korem"
-          src="https://avatars.githubusercontent.com/u/59747802?v=4"
+          src="http://avatars.githubusercontent.com/u/59747802?v=4"
           width="117"
         />
         <br />
@@ -426,13 +426,13 @@ If `gravity` is equals to `bottom`, it will be pushed from bottom.
 
 ## License
 
-MIT © [Varun A P](https://github.com/apvarun)
+MIT © [Varun A P](http://github.com/apvarun)
 
-<a href="https://www.buymeacoffee.com/apvarun" target="_blank" rel="noopener"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40" width="145" alt="Buy Me A Coffee"></a>
+<a href="http://www.buymeacoffee.com/apvarun" target="_blank" rel="noopener"><img src="http://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="40" width="145" alt="Buy Me A Coffee"></a>
 
-[ie]: https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/edge.png
-[firefox]: https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/firefox.png
-[chrome]: https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome.png
-[safari]: https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/safari.png
-[opera]: https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/opera.png
+[ie]: http://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/edge.png
+[firefox]: http://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/firefox.png
+[chrome]: http://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome.png
+[safari]: http://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/safari.png
+[opera]: http://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/opera.png
 

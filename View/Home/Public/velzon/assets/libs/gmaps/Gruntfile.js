@@ -1,5 +1,5 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   'use strict';
 
@@ -7,14 +7,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    meta : {
-      banner : '/*!\n' +
-      ' * GMaps.js v<%= pkg.version %>\n' +
-      ' * <%= pkg.homepage %>\n' +
-      ' *\n' +
-      ' * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author %>\n' +
-      ' * Released under the <%= pkg.license %> License.\n' +
-      ' */\n\n'
+    meta: {
+      banner: '/*!\n' +
+        ' * GMaps.js v<%= pkg.version %>\n' +
+        ' * <%= pkg.homepage %>\n' +
+        ' *\n' +
+        ' * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author %>\n' +
+        ' * Released under the <%= pkg.license %> License.\n' +
+        ' */\n\n'
     },
 
     concat: {
@@ -47,38 +47,38 @@ module.exports = function(grunt) {
       options: {
         template: 'test/template/jasmine-gmaps.html',
         specs: 'test/spec/*Spec.js',
-        vendor: ['https://maps.google.com/maps/api/js?sensor=true'],
+        vendor: ['http://maps.google.com/maps/api/js?sensor=true'],
         styles: 'test/style.css'
       },
       src: 'gmaps.js'
     },
 
-    watch : {
-      files : '<%= concat.dist.src %>',
-      tasks : 'default'
+    watch: {
+      files: '<%= concat.dist.src %>',
+      tasks: 'default'
     },
 
-    jshint : {
-      all : ['Gruntfile.js']
+    jshint: {
+      all: ['Gruntfile.js']
     },
 
-    uglify : {
-      options : {
-        sourceMap : true
+    uglify: {
+      options: {
+        sourceMap: true
       },
-      all : {
+      all: {
         files: {
-           'gmaps.min.js': [ 'gmaps.js' ]
+          'gmaps.min.js': ['gmaps.js']
         }
       }
     },
 
-    umd : {
-      all : {
-        src : 'gmaps.js',
-        objectToExport : 'GMaps',
-        globalAlias : 'GMaps',
-        template : 'umd.hbs',
+    umd: {
+      all: {
+        src: 'gmaps.js',
+        objectToExport: 'GMaps',
+        globalAlias: 'GMaps',
+        template: 'umd.hbs',
         deps: {
           amd: ['jquery', 'googlemaps!']
         }

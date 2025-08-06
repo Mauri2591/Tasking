@@ -1194,7 +1194,7 @@ event with location data on success or a <a href="#map-locationerror"><code>loca
 and optionally sets the map view to the user&#39;s location with respect to
 detection accuracy (or to the world view if geolocation failed).
 Note that, if your page doesn&#39;t use HTTPS, this method will fail in
-modern browsers (<a href="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome 50 and newer</a>)
+modern browsers (<a href="http://sites.google.com/a/chromium.org/dev/Home/chromium-security/deprecating-powerful-features-on-insecure-origins">Chrome 50 and newer</a>)
 See <a href="#locate-options"><code>Locate options</code></a> for more details.</p>
 </td>
 	</tr>
@@ -4306,7 +4306,7 @@ properties. The event can optionally be propagated to event parents.</p>
 
 
 
-<pre><code class="lang-js">L.tileLayer(&#39;https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}&#39;, {foo: &#39;bar&#39;, attribution: &#39;Map data &amp;copy; &lt;a href=&quot;https://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;&#39;}).addTo(map);
+<pre><code class="lang-js">L.tileLayer(&#39;http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}&#39;, {foo: &#39;bar&#39;, attribution: &#39;Map data &amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;&#39;}).addTo(map);
 </code></pre>
 
 
@@ -4401,7 +4401,7 @@ You can use custom keys in the template, which will be <a href="#util-template">
 		<td><code><b>tms</b></code></td>
 		<td><code>Boolean</code></td>
 		<td><code>false</code></td>
-		<td>If <code>true</code>, inverses Y axis numbering for tiles (turn this on for <a href="https://en.wikipedia.org/wiki/Tile_Map_Service">TMS</a> services).</td>
+		<td>If <code>true</code>, inverses Y axis numbering for tiles (turn this on for <a href="http://en.wikipedia.org/wiki/Tile_Map_Service">TMS</a> services).</td>
 	</tr>
 	<tr id='tilelayer-zoomreverse'>
 		<td><code><b>zoomReverse</b></code></td>
@@ -4421,7 +4421,7 @@ You can use custom keys in the template, which will be <a href="#util-template">
 		<td><code>false</code></td>
 		<td>Whether the crossOrigin attribute will be added to the tiles.
 If a String is provided, all tiles will have their crossOrigin attribute set to the String provided. This is needed if you want to access tile pixel data.
-Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
+Refer to <a href="http://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
 	</tr>
 </tbody></table>
 
@@ -5162,7 +5162,7 @@ properties. The event can optionally be propagated to event parents.</p>
 	</div>
 </div>
 
-</section><h2 id='tilelayer-wms'>TileLayer.WMS</h2><p>Used to display <a href="https://en.wikipedia.org/wiki/Web_Map_Service">WMS</a> services as tile layers on the map. Extends <a href="#tilelayer"><code>TileLayer</code></a>.</p>
+</section><h2 id='tilelayer-wms'>TileLayer.WMS</h2><p>Used to display <a href="http://en.wikipedia.org/wiki/Web_Map_Service">WMS</a> services as tile layers on the map. Extends <a href="#tilelayer"><code>TileLayer</code></a>.</p>
 
 <section>
 <h3 id='tilelayer-wms-example'>Usage example</h3>
@@ -5326,7 +5326,7 @@ map CRS. Don&#39;t change this if you&#39;re not sure what it means.</td>
 		<td><code><b>tms</b></code></td>
 		<td><code>Boolean</code></td>
 		<td><code>false</code></td>
-		<td>If <code>true</code>, inverses Y axis numbering for tiles (turn this on for <a href="https://en.wikipedia.org/wiki/Tile_Map_Service">TMS</a> services).</td>
+		<td>If <code>true</code>, inverses Y axis numbering for tiles (turn this on for <a href="http://en.wikipedia.org/wiki/Tile_Map_Service">TMS</a> services).</td>
 	</tr>
 	<tr id='tilelayer-wms-zoomreverse'>
 		<td><code><b>zoomReverse</b></code></td>
@@ -5346,7 +5346,7 @@ map CRS. Don&#39;t change this if you&#39;re not sure what it means.</td>
 		<td><code>false</code></td>
 		<td>Whether the crossOrigin attribute will be added to the tiles.
 If a String is provided, all tiles will have their crossOrigin attribute set to the String provided. This is needed if you want to access tile pixel data.
-Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
+Refer to <a href="http://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
 	</tr>
 </tbody></table>
 
@@ -6178,7 +6178,7 @@ geographical bounds it is tied to.</td>
 		<td><code>false</code></td>
 		<td>Whether the crossOrigin attribute will be added to the image.
 If a String is provided, the image will have its crossOrigin attribute set to the String provided. This is needed if you want to access image pixel data.
-Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
+Refer to <a href="http://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
 	</tr>
 	<tr id='imageoverlay-erroroverlayurl'>
 		<td><code><b>errorOverlayUrl</b></code></td>
@@ -6190,7 +6190,7 @@ Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_setting
 		<td><code><b>zIndex</b></code></td>
 		<td><code>Number</code></td>
 		<td><code>1</code></td>
-		<td>The explicit <a href="https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index">zIndex</a> of the overlay layer.</td>
+		<td>The explicit <a href="http://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index">zIndex</a> of the overlay layer.</td>
 	</tr>
 	<tr id='imageoverlay-classname'>
 		<td><code><b>className</b></code></td>
@@ -6508,7 +6508,7 @@ for a second (also called long press).</td>
 	<tr id='imageoverlay-getelement'>
 		<td><code><b>getElement</b>()</code></td>
 		<td><code>HTMLElement</code></td>
-		<td><p>Returns the instance of <a href="https://developer.mozilla.org/docs/Web/API/HTMLImageElement"><code>HTMLImageElement</code></a>
+		<td><p>Returns the instance of <a href="http://developer.mozilla.org/docs/Web/API/HTMLImageElement"><code>HTMLImageElement</code></a>
 used by this overlay.</p>
 </td>
 	</tr>
@@ -6836,7 +6836,7 @@ properties. The event can optionally be propagated to event parents.</p>
 </div>
 
 </section><h2 id='videooverlay'>VideoOverlay</h2><p>Used to load and display a video player over specific bounds of the map. Extends <a href="#imageoverlay"><code>ImageOverlay</code></a>.
-A video overlay uses the <a href="https://developer.mozilla.org/docs/Web/HTML/Element/video"><code>&lt;video&gt;</code></a>
+A video overlay uses the <a href="http://developer.mozilla.org/docs/Web/HTML/Element/video"><code>&lt;video&gt;</code></a>
 HTML5 element.</p>
 
 <section>
@@ -6848,7 +6848,7 @@ HTML5 element.</p>
 
 
 
-<pre><code class="lang-js">var videoUrl = &#39;https://www.mapbox.com/bites/00188/patricia_nasa.webm&#39;,
+<pre><code class="lang-js">var videoUrl = &#39;http://www.mapbox.com/bites/00188/patricia_nasa.webm&#39;,
     videoBounds = [[ 32, -130], [ 13, -100]];
 L.videoOverlay(videoUrl, videoBounds ).addTo(map);
 </code></pre>
@@ -6915,7 +6915,7 @@ geographical bounds it is tied to.</td>
 		<td><code>Boolean</code></td>
 		<td><code>true</code></td>
 		<td>Whether the video will save aspect ratio after the projection.
-Relevant for supported browsers. Browser compatibility- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit</a></td>
+Relevant for supported browsers. Browser compatibility- <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/object-fit">http://developer.mozilla.org/en-US/docs/Web/CSS/object-fit</a></td>
 	</tr>
 	<tr id='videooverlay-muted'>
 		<td><code><b>muted</b></code></td>
@@ -6968,7 +6968,7 @@ Relevant for supported browsers. Browser compatibility- <a href="https://develop
 		<td><code>false</code></td>
 		<td>Whether the crossOrigin attribute will be added to the image.
 If a String is provided, the image will have its crossOrigin attribute set to the String provided. This is needed if you want to access image pixel data.
-Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
+Refer to <a href="http://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
 	</tr>
 	<tr id='videooverlay-erroroverlayurl'>
 		<td><code><b>errorOverlayUrl</b></code></td>
@@ -6980,7 +6980,7 @@ Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_setting
 		<td><code><b>zIndex</b></code></td>
 		<td><code>Number</code></td>
 		<td><code>1</code></td>
-		<td>The explicit <a href="https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index">zIndex</a> of the overlay layer.</td>
+		<td>The explicit <a href="http://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index">zIndex</a> of the overlay layer.</td>
 	</tr>
 	<tr id='videooverlay-classname'>
 		<td><code><b>className</b></code></td>
@@ -7278,7 +7278,7 @@ for a second (also called long press).</td>
 	<tr id='videooverlay-getelement'>
 		<td><code><b>getElement</b>()</code></td>
 		<td><code>HTMLVideoElement</code></td>
-		<td><p>Returns the instance of <a href="https://developer.mozilla.org/docs/Web/API/HTMLVideoElement"><code>HTMLVideoElement</code></a>
+		<td><p>Returns the instance of <a href="http://developer.mozilla.org/docs/Web/API/HTMLVideoElement"><code>HTMLVideoElement</code></a>
 used by this overlay.</p>
 </td>
 	</tr>
@@ -7669,7 +7669,7 @@ properties. The event can optionally be propagated to event parents.</p>
 </div>
 
 </section><h2 id='svgoverlay'>SVGOverlay</h2><p>Used to load, display and provide DOM access to an SVG file over specific bounds of the map. Extends <a href="#imageoverlay"><code>ImageOverlay</code></a>.
-An SVG overlay uses the <a href="https://developer.mozilla.org/docs/Web/SVG/Element/svg"><code>&lt;svg&gt;</code></a> element.</p>
+An SVG overlay uses the <a href="http://developer.mozilla.org/docs/Web/SVG/Element/svg"><code>&lt;svg&gt;</code></a> element.</p>
 
 <section>
 <h3 id='svgoverlay-example'>Usage example</h3>
@@ -7763,7 +7763,7 @@ A viewBox attribute is required on the SVG element to zoom in and out properly.<
 		<td><code>false</code></td>
 		<td>Whether the crossOrigin attribute will be added to the image.
 If a String is provided, the image will have its crossOrigin attribute set to the String provided. This is needed if you want to access image pixel data.
-Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
+Refer to <a href="http://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">CORS Settings</a> for valid String values.</td>
 	</tr>
 	<tr id='svgoverlay-erroroverlayurl'>
 		<td><code><b>errorOverlayUrl</b></code></td>
@@ -7775,7 +7775,7 @@ Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_setting
 		<td><code><b>zIndex</b></code></td>
 		<td><code>Number</code></td>
 		<td><code>1</code></td>
-		<td>The explicit <a href="https://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index">zIndex</a> of the overlay layer.</td>
+		<td>The explicit <a href="http://developer.mozilla.org/docs/Web/CSS/CSS_Positioning/Understanding_z_index">zIndex</a> of the overlay layer.</td>
 	</tr>
 	<tr id='svgoverlay-classname'>
 		<td><code><b>className</b></code></td>
@@ -8059,7 +8059,7 @@ for a second (also called long press).</td>
 	<tr id='svgoverlay-getelement'>
 		<td><code><b>getElement</b>()</code></td>
 		<td><code>SVGElement</code></td>
-		<td><p>Returns the instance of <a href="https://developer.mozilla.org/docs/Web/API/SVGElement"><code>SVGElement</code></a>
+		<td><p>Returns the instance of <a href="http://developer.mozilla.org/docs/Web/API/SVGElement"><code>SVGElement</code></a>
 used by this overlay.</p>
 </td>
 	</tr>
@@ -8496,25 +8496,25 @@ overlays (Polygon, Polyline, Circle). Do not use it directly. Extends <a href="#
 		<td><code><b>lineCap</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
 	</tr>
 	<tr id='path-linejoin'>
 		<td><code><b>lineJoin</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
 	</tr>
 	<tr id='path-dasharray'>
 		<td><code><b>dashArray</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the stroke <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the stroke <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='path-dashoffset'>
 		<td><code><b>dashOffset</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='path-fill'>
 		<td><code><b>fill</b></code></td>
@@ -8538,7 +8538,7 @@ overlays (Polygon, Polyline, Circle). Do not use it directly. Extends <a href="#
 		<td><code><b>fillRule</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;evenodd&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
 	</tr>
 	<tr id='path-bubblingmouseevents'>
 		<td><code><b>bubblingMouseEvents</b></code></td>
@@ -9289,25 +9289,25 @@ better performance and smoother look, and less means more accurate representatio
 		<td><code><b>lineCap</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
 	</tr>
 	<tr id='polyline-linejoin'>
 		<td><code><b>lineJoin</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
 	</tr>
 	<tr id='polyline-dasharray'>
 		<td><code><b>dashArray</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the stroke <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the stroke <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='polyline-dashoffset'>
 		<td><code><b>dashOffset</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='polyline-fill'>
 		<td><code><b>fill</b></code></td>
@@ -9331,7 +9331,7 @@ better performance and smoother look, and less means more accurate representatio
 		<td><code><b>fillRule</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;evenodd&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
 	</tr>
 	<tr id='polyline-bubblingmouseevents'>
 		<td><code><b>bubblingMouseEvents</b></code></td>
@@ -10163,25 +10163,25 @@ better performance and smoother look, and less means more accurate representatio
 		<td><code><b>lineCap</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
 	</tr>
 	<tr id='polygon-linejoin'>
 		<td><code><b>lineJoin</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
 	</tr>
 	<tr id='polygon-dasharray'>
 		<td><code><b>dashArray</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the stroke <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the stroke <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='polygon-dashoffset'>
 		<td><code><b>dashOffset</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='polygon-fill'>
 		<td><code><b>fill</b></code></td>
@@ -10205,7 +10205,7 @@ better performance and smoother look, and less means more accurate representatio
 		<td><code><b>fillRule</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;evenodd&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
 	</tr>
 	<tr id='polygon-bubblingmouseevents'>
 		<td><code><b>bubblingMouseEvents</b></code></td>
@@ -11041,25 +11041,25 @@ better performance and smoother look, and less means more accurate representatio
 		<td><code><b>lineCap</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
 	</tr>
 	<tr id='rectangle-linejoin'>
 		<td><code><b>lineJoin</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
 	</tr>
 	<tr id='rectangle-dasharray'>
 		<td><code><b>dashArray</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the stroke <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the stroke <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='rectangle-dashoffset'>
 		<td><code><b>dashOffset</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='rectangle-fill'>
 		<td><code><b>fill</b></code></td>
@@ -11083,7 +11083,7 @@ better performance and smoother look, and less means more accurate representatio
 		<td><code><b>fillRule</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;evenodd&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
 	</tr>
 	<tr id='rectangle-bubblingmouseevents'>
 		<td><code><b>bubblingMouseEvents</b></code></td>
@@ -11934,25 +11934,25 @@ Do not use in new applications or plugins.</td>
 		<td><code><b>lineCap</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
 	</tr>
 	<tr id='circle-linejoin'>
 		<td><code><b>lineJoin</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
 	</tr>
 	<tr id='circle-dasharray'>
 		<td><code><b>dashArray</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the stroke <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the stroke <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='circle-dashoffset'>
 		<td><code><b>dashOffset</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='circle-fill'>
 		<td><code><b>fill</b></code></td>
@@ -11976,7 +11976,7 @@ Do not use in new applications or plugins.</td>
 		<td><code><b>fillRule</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;evenodd&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
 	</tr>
 	<tr id='circle-bubblingmouseevents'>
 		<td><code><b>bubblingMouseEvents</b></code></td>
@@ -12788,25 +12788,25 @@ properties. The event can optionally be propagated to event parents.</p>
 		<td><code><b>lineCap</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linecap">shape to be used at the end</a> of the stroke.</td>
 	</tr>
 	<tr id='circlemarker-linejoin'>
 		<td><code><b>lineJoin</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;round&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-linejoin">shape to be used at the corners</a> of the stroke.</td>
 	</tr>
 	<tr id='circlemarker-dasharray'>
 		<td><code><b>dashArray</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the stroke <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the stroke <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dasharray">dash pattern</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='circlemarker-dashoffset'>
 		<td><code><b>dashOffset</b></code></td>
 		<td><code>String</code></td>
 		<td><code>null</code></td>
-		<td>A string that defines the <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
+		<td>A string that defines the <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-dashoffset">distance into the dash pattern to start the dash</a>. Doesn&#39;t work on <a href="#canvas"><code>Canvas</code></a>-powered layers in <a href="http://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash#Browser_compatibility">some old browsers</a>.</td>
 	</tr>
 	<tr id='circlemarker-fill'>
 		<td><code><b>fill</b></code></td>
@@ -12830,7 +12830,7 @@ properties. The event can optionally be propagated to event parents.</p>
 		<td><code><b>fillRule</b></code></td>
 		<td><code>String</code></td>
 		<td><code>&#x27;evenodd&#x27;</code></td>
-		<td>A string that defines <a href="https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
+		<td>A string that defines <a href="http://developer.mozilla.org/docs/Web/SVG/Attribute/fill-rule">how the inside of a shape</a> is determined.</td>
 	</tr>
 	<tr id='circlemarker-bubblingmouseevents'>
 		<td><code><b>bubblingMouseEvents</b></code></td>
@@ -13514,12 +13514,12 @@ properties. The event can optionally be propagated to event parents.</p>
 
 </section><h2 id='svg'>SVG</h2><p>VML was deprecated in 2012, which means VML functionality exists only for backwards compatibility
 with old versions of Internet Explorer.</p>
-<p>Allows vector layers to be displayed with <a href="https://developer.mozilla.org/docs/Web/SVG">SVG</a>.
+<p>Allows vector layers to be displayed with <a href="http://developer.mozilla.org/docs/Web/SVG">SVG</a>.
 Inherits <a href="#renderer"><code>Renderer</code></a>.
 Due to <a href="http://caniuse.com/#search=svg">technical limitations</a>, SVG is not
 available in all web browsers, notably Android 2.x and 3.x.
 Although SVG is not available on IE7 and IE8, these browsers support
-<a href="https://en.wikipedia.org/wiki/Vector_Markup_Language">VML</a>
+<a href="http://en.wikipedia.org/wiki/Vector_Markup_Language">VML</a>
 (a now deprecated technology), and the SVG renderer will fall back to VML in
 this case.</p>
 
@@ -14116,9 +14116,9 @@ properties. The event can optionally be propagated to event parents.</p>
 	<tr id='svg-create'>
 		<td><code><b>create</b>(<nobr>&lt;String&gt;</nobr> <i>name</i>)</code></td>
 		<td><code>SVGElement</code></td>
-		<td>Returns a instance of <a href="https://developer.mozilla.org/docs/Web/API/SVGElement">SVGElement</a>,
+		<td>Returns a instance of <a href="http://developer.mozilla.org/docs/Web/API/SVGElement">SVGElement</a>,
 corresponding to the class name passed. For example, using &#39;line&#39; will return
-an instance of <a href="https://developer.mozilla.org/docs/Web/API/SVGLineElement">SVGLineElement</a>.</td>
+an instance of <a href="http://developer.mozilla.org/docs/Web/API/SVGLineElement">SVGLineElement</a>.</td>
 	</tr>
 	<tr id='svg-pointstopath'>
 		<td><code><b>pointsToPath</b>(<nobr>&lt;Point[]&gt;</nobr> <i>rings</i>, <nobr>&lt;Boolean&gt;</nobr> <i>closed</i>)</code></td>
@@ -14131,7 +14131,7 @@ into &quot;M..L..L..&quot; instructions</td>
 </section>
 
 
-</section><h2 id='canvas'>Canvas</h2><p>Allows vector layers to be displayed with <a href="https://developer.mozilla.org/docs/Web/API/Canvas_API"><code>&lt;canvas&gt;</code></a>.
+</section><h2 id='canvas'>Canvas</h2><p>Allows vector layers to be displayed with <a href="http://developer.mozilla.org/docs/Web/API/Canvas_API"><code>&lt;canvas&gt;</code></a>.
 Inherits <a href="#renderer"><code>Renderer</code></a>.
 Due to <a href="http://caniuse.com/#search=canvas">technical limitations</a>, Canvas is not
 available in all web browsers, notably IE8, and overlapping geometries might
@@ -16047,7 +16047,7 @@ GeoJSON data and display it on the map. Extends <a href="#featuregroup"><code>Fe
 	<tr id='geojson-l-geojson'>
 		<td><code><b>L.geoJSON</b>(<nobr>&lt;Object&gt;</nobr> <i>geojson?</i>, <nobr>&lt;<a href='#geojson-option'>GeoJSON options</a>&gt;</nobr> <i>options?</i>)</code></td>
 		<td>Creates a GeoJSON layer. Optionally accepts an object in
-<a href="https://tools.ietf.org/html/rfc7946">GeoJSON format</a> to display on the map
+<a href="http://tools.ietf.org/html/rfc7946">GeoJSON format</a> to display on the map
 (you can alternatively add it later with <code>addData</code> method) and an <code>options</code> object.</td>
 	</tr>
 </tbody></table>
@@ -17734,7 +17734,7 @@ can&#39;t be added to it with the <code>include</code> function.</p>
 	<tr id='latlng-distanceto'>
 		<td><code><b>distanceTo</b>(<nobr>&lt;<a href='#latlng'>LatLng</a>&gt;</nobr> <i>otherLatLng</i>)</code></td>
 		<td><code>Number</code></td>
-		<td><p>Returns the distance (in meters) to the given <a href="#latlng"><code>LatLng</code></a> calculated using the <a href="https://en.wikipedia.org/wiki/Spherical_law_of_cosines">Spherical Law of Cosines</a>.</p>
+		<td><p>Returns the distance (in meters) to the given <a href="#latlng"><code>LatLng</code></a> calculated using the <a href="http://en.wikipedia.org/wiki/Spherical_law_of_cosines">Spherical Law of Cosines</a>.</p>
 </td>
 	</tr>
 	<tr id='latlng-wrap'>
@@ -18090,7 +18090,7 @@ can&#39;t be added to it with the <code>include</code> function.</p>
 		<td><code><a href='#point'>Point</a></code></td>
 		<td><p>Multiply each coordinate of the current point by each coordinate of
 <code>scale</code>. In linear algebra terms, multiply the point by the
-<a href="https://en.wikipedia.org/wiki/Scaling_%28geometry%29#Matrix_representation">scaling matrix</a>
+<a href="http://en.wikipedia.org/wiki/Scaling_%28geometry%29#Matrix_representation">scaling matrix</a>
 defined by <code>scale</code>.</p>
 </td>
 	</tr>
@@ -19213,7 +19213,7 @@ in which they were added to the control.</td>
 		<td><code><b>sortFunction</b></code></td>
 		<td><code>Function</code></td>
 		<td><code>*</code></td>
-		<td>A <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">compare function</a>
+		<td>A <a href="http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">compare function</a>
 that will be used for sorting the layers, when <code>sortLayers</code> is <code>true</code>.
 The function receives both the <a href="#layer"><code>L.Layer</code></a> instances and their names, as in
 <code>sortFunction(layerA, layerB, nameA, nameB)</code>.
@@ -19671,12 +19671,12 @@ By default, it sorts layers alphabetically by their name.</td>
 	<tr id='browser-pointer'>
 		<td><code><b>pointer</b></code></td>
 		<td><code>Boolean</code></td>
-		<td><code>true</code> for all browsers supporting <a href="https://msdn.microsoft.com/en-us/library/dn433244%28v=vs.85%29.aspx">pointer events</a>.</td>
+		<td><code>true</code> for all browsers supporting <a href="http://msdn.microsoft.com/en-us/library/dn433244%28v=vs.85%29.aspx">pointer events</a>.</td>
 	</tr>
 	<tr id='browser-touch'>
 		<td><code><b>touch</b></code></td>
 		<td><code>Boolean</code></td>
-		<td><code>true</code> for all browsers supporting <a href="https://developer.mozilla.org/docs/Web/API/Touch_events">touch events</a>.
+		<td><code>true</code> for all browsers supporting <a href="http://developer.mozilla.org/docs/Web/API/Touch_events">touch events</a>.
 This does not necessarily mean that the browser is running in a computer with
 a touchscreen, it only means that the browser is capable of understanding
 touch events.</td>
@@ -19704,17 +19704,17 @@ touch events.</td>
 	<tr id='browser-canvas'>
 		<td><code><b>canvas</b></code></td>
 		<td><code>Boolean</code></td>
-		<td><code>true</code> when the browser supports <a href="https://developer.mozilla.org/docs/Web/API/Canvas_API"><code>&lt;canvas&gt;</code></a>.</td>
+		<td><code>true</code> when the browser supports <a href="http://developer.mozilla.org/docs/Web/API/Canvas_API"><code>&lt;canvas&gt;</code></a>.</td>
 	</tr>
 	<tr id='browser-svg'>
 		<td><code><b>svg</b></code></td>
 		<td><code>Boolean</code></td>
-		<td><code>true</code> when the browser supports <a href="https://developer.mozilla.org/docs/Web/SVG">SVG</a>.</td>
+		<td><code>true</code> when the browser supports <a href="http://developer.mozilla.org/docs/Web/SVG">SVG</a>.</td>
 	</tr>
 	<tr id='browser-vml'>
 		<td><code><b>vml</b></code></td>
 		<td><code>Boolean</code></td>
-		<td><code>true</code> if the browser supports <a href="https://en.wikipedia.org/wiki/Vector_Markup_Language">VML</a>.</td>
+		<td><code>true</code> if the browser supports <a href="http://en.wikipedia.org/wiki/Vector_Markup_Language">VML</a>.</td>
 	</tr>
 </tbody></table>
 
@@ -19746,12 +19746,12 @@ touch events.</td>
 	<tr id='util-create'>
 		<td><code><b>create</b>(<nobr>&lt;Object&gt;</nobr> <i>proto</i>, <nobr>&lt;Object&gt;</nobr> <i>properties?</i>)</code></td>
 		<td><code>Object</code></td>
-		<td>Compatibility polyfill for <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create</a></td>
+		<td>Compatibility polyfill for <a href="http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create</a></td>
 	</tr>
 	<tr id='util-bind'>
 		<td><code><b>bind</b>(<nobr>&lt;Function&gt;</nobr> <i>fn</i>, <i>…</i>)</code></td>
 		<td><code>Function</code></td>
-		<td>Returns a new function bound to the arguments passed, like <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a>.
+		<td>Returns a new function bound to the arguments passed, like <a href="http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a>.
 Has a <code>L.bind()</code> shortcut.</td>
 	</tr>
 	<tr id='util-stamp'>
@@ -19789,7 +19789,7 @@ Has an <code>L.throttle</code> shortcut.</td>
 	<tr id='util-trim'>
 		<td><code><b>trim</b>(<nobr>&lt;String&gt;</nobr> <i>str</i>)</code></td>
 		<td><code>String</code></td>
-		<td>Compatibility polyfill for <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim</a></td>
+		<td>Compatibility polyfill for <a href="http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim</a></td>
 	</tr>
 	<tr id='util-splitwords'>
 		<td><code><b>splitWords</b>(<nobr>&lt;String&gt;</nobr> <i>str</i>)</code></td>
@@ -19820,12 +19820,12 @@ data values — they will be evaluated passing <code>data</code> as an argument.
 	<tr id='util-isarray'>
 		<td><code><b>isArray</b>(<i>obj</i>)</code></td>
 		<td><code>Boolean</code></td>
-		<td>Compatibility polyfill for <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">Array.isArray</a></td>
+		<td>Compatibility polyfill for <a href="http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">Array.isArray</a></td>
 	</tr>
 	<tr id='util-indexof'>
 		<td><code><b>indexOf</b>(<nobr>&lt;Array&gt;</nobr> <i>array</i>, <nobr>&lt;Object&gt;</nobr> <i>el</i>)</code></td>
 		<td><code>Number</code></td>
-		<td>Compatibility polyfill for <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">Array.prototype.indexOf</a></td>
+		<td>Compatibility polyfill for <a href="http://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">Array.prototype.indexOf</a></td>
 	</tr>
 	<tr id='util-requestanimframe'>
 		<td><code><b>requestAnimFrame</b>(<nobr>&lt;Function&gt;</nobr> <i>fn</i>, <nobr>&lt;Object&gt;</nobr> <i>context?</i>, <nobr>&lt;Boolean&gt;</nobr> <i>immediate?</i>)</code></td>
@@ -19833,13 +19833,13 @@ data values — they will be evaluated passing <code>data</code> as an argument.
 		<td>Schedules <code>fn</code> to be executed when the browser repaints. <code>fn</code> is bound to
 <code>context</code> if given. When <code>immediate</code> is set, <code>fn</code> is called immediately if
 the browser doesn&#39;t have native support for
-<a href="https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame"><code>window.requestAnimationFrame</code></a>,
+<a href="http://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame"><code>window.requestAnimationFrame</code></a>,
 otherwise it&#39;s delayed. Returns a request ID that can be used to cancel the request.</td>
 	</tr>
 	<tr id='util-cancelanimframe'>
 		<td><code><b>cancelAnimFrame</b>(<nobr>&lt;Number&gt;</nobr> <i>id</i>)</code></td>
 		<td><code>undefined</code></td>
-		<td>Cancels a previous <code>requestAnimFrame</code>. See also <a href="https://developer.mozilla.org/docs/Web/API/window/cancelAnimationFrame">window.cancelAnimationFrame</a>.</td>
+		<td>Cancels a previous <code>requestAnimFrame</code>. See also <a href="http://developer.mozilla.org/docs/Web/API/window/cancelAnimationFrame">window.cancelAnimationFrame</a>.</td>
 	</tr>
 </tbody></table>
 
@@ -20006,7 +20006,7 @@ Also released as a separated micro-library <a href="http://mourner.github.com/si
 		<td><code><b>clipSegment</b>(<nobr>&lt;<a href='#point'>Point</a>&gt;</nobr> <i>a</i>, <nobr>&lt;<a href='#point'>Point</a>&gt;</nobr> <i>b</i>, <nobr>&lt;<a href='#bounds'>Bounds</a>&gt;</nobr> <i>bounds</i>, <nobr>&lt;Boolean&gt;</nobr> <i>useLastCode?</i>, <nobr>&lt;Boolean&gt;</nobr> <i>round?</i>)</code></td>
 		<td><code>Point[]|Boolean</code></td>
 		<td>Clips the segment a to b by rectangular bounds with the
-<a href="https://en.wikipedia.org/wiki/Cohen%E2%80%93Sutherland_algorithm">Cohen-Sutherland algorithm</a>
+<a href="http://en.wikipedia.org/wiki/Cohen%E2%80%93Sutherland_algorithm">Cohen-Sutherland algorithm</a>
 (modifying the segment points directly!). Used by Leaflet to only show polyline
 points that are on the screen or near, increasing performance.</td>
 	</tr>
@@ -20040,7 +20040,7 @@ points that are on the screen or near, increasing performance.</td>
 	<tr id='polyutil-clippolygon'>
 		<td><code><b>clipPolygon</b>(<nobr>&lt;Point[]&gt;</nobr> <i>points</i>, <nobr>&lt;<a href='#bounds'>Bounds</a>&gt;</nobr> <i>bounds</i>, <nobr>&lt;Boolean&gt;</nobr> <i>round?</i>)</code></td>
 		<td><code>Point[]</code></td>
-		<td>Clips the polygon geometry defined by the given <code>points</code> by the given bounds (using the <a href="https://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm">Sutherland-Hodgman algorithm</a>).
+		<td>Clips the polygon geometry defined by the given <code>points</code> by the given bounds (using the <a href="http://en.wikipedia.org/wiki/Sutherland%E2%80%93Hodgman_algorithm">Sutherland-Hodgman algorithm</a>).
 Used by Leaflet to only show polygon points that are on the screen or near, increasing
 performance. Note that polygon points needs different algorithm for clipping
 than polyline, so there&#39;s a separate method for it.</td>
@@ -20050,7 +20050,7 @@ than polyline, so there&#39;s a separate method for it.</td>
 </section>
 
 
-</section><h2 id='domevent'>DomEvent</h2><p>Utility functions to work with the <a href="https://developer.mozilla.org/docs/Web/API/Event">DOM events</a>, used by Leaflet internally.</p>
+</section><h2 id='domevent'>DomEvent</h2><p>Utility functions to work with the <a href="http://developer.mozilla.org/docs/Web/API/Event">DOM events</a>, used by Leaflet internally.</p>
 
 <section>
 <h3 id='domevent-function'>Functions</h3>
@@ -20154,7 +20154,7 @@ a best guess of 60 pixels.</td>
 </section>
 
 
-</section><h2 id='domutil'>DomUtil</h2><p>Utility functions to work with the <a href="https://developer.mozilla.org/docs/Web/API/Document_Object_Model">DOM</a>
+</section><h2 id='domutil'>DomUtil</h2><p>Utility functions to work with the <a href="http://developer.mozilla.org/docs/Web/API/Document_Object_Model">DOM</a>
 tree, used by Leaflet internally.
 Most functions expecting or returning a <code>HTMLElement</code> also work for
 SVG elements. The only difference is that classes refer to CSS classes
@@ -20296,7 +20296,7 @@ for <code>dragstart</code> DOM events, usually generated when the user drags an 
 	<tr id='domutil-preventoutline'>
 		<td><code><b>preventOutline</b>(<nobr>&lt;HTMLElement&gt;</nobr> <i>el</i>)</code></td>
 		<td><code></code></td>
-		<td>Makes the <a href="https://developer.mozilla.org/docs/Web/CSS/outline">outline</a>
+		<td>Makes the <a href="http://developer.mozilla.org/docs/Web/CSS/outline">outline</a>
 of the element <code>el</code> invisible. Used internally by Leaflet to prevent
 focusable elements from displaying an outline when the user performs a
 drag interaction on them.</td>
@@ -20316,7 +20316,7 @@ drag interaction on them.</td>
 		<td><code>Object</code></td>
 		<td>Computes the CSS scale currently applied on the element.
 Returns an object with <code>x</code> and <code>y</code> members as horizontal and vertical scales respectively,
-and <code>boundingClientRect</code> as the result of <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect"><code>getBoundingClientRect()</code></a>.</td>
+and <code>boundingClientRect</code> as the result of <a href="http://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect"><code>getBoundingClientRect()</code></a>.</td>
 	</tr>
 </tbody></table>
 
@@ -22732,7 +22732,7 @@ Map&#39;s <a href="#crs"><code>crs</code></a> option.</td>
 	<tr id='crs-l-crs-epsg4326'>
 		<td><code><b>L.CRS.EPSG4326</b></code></td>
 		<td>A common CRS among GIS enthusiasts. Uses simple Equirectangular projection.
-Leaflet 1.0.x complies with the <a href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification#global-geodetic">TMS coordinate scheme for EPSG:4326</a>,
+Leaflet 1.0.x complies with the <a href="http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification#global-geodetic">TMS coordinate scheme for EPSG:4326</a>,
 which is a breaking change from 0.7.x behaviour.  If you are using a <a href="#tilelayer"><code>TileLayer</code></a>
 with this CRS, ensure that there are two 256x256 pixel tiles covering the
 whole earth at zoom level zero, and that the tile coordinate origin is (-180,+90),
@@ -22756,11 +22756,11 @@ simple euclidean distance.</td>
 		<td><code><b>L.CRS.Base</b></code></td>
 		<td>Object that defines coordinate reference systems for projecting
 geographical points into pixel (screen) coordinates and back (and to
-coordinates in other units for <a href="https://en.wikipedia.org/wiki/Web_Map_Service">WMS</a> services). See
+coordinates in other units for <a href="http://en.wikipedia.org/wiki/Web_Map_Service">WMS</a> services). See
 <a href="http://en.wikipedia.org/wiki/Coordinate_reference_system">spatial reference system</a>.
 Leaflet defines the most usual CRSs by default. If you want to use a
 CRS not defined by default, take a look at the
-<a href="https://github.com/kartena/Proj4Leaflet">Proj4Leaflet</a> plugin.
+<a href="http://github.com/kartena/Proj4Leaflet">Proj4Leaflet</a> plugin.
 Note that the CRS instances do not inherit from Leaflet&#39;s <a href="#class"><code>Class</code></a> object,
 and can&#39;t be instantiated. Also, new classes can&#39;t inherit from them,
 and methods can&#39;t be added to them with the <code>include</code> function.</td>
@@ -23369,7 +23369,7 @@ event parent.</td>
 	<tr id='keyboardevent-originalevent'>
 		<td><code><b>originalEvent</b></code></td>
 		<td><code>DOMEvent</code></td>
-		<td>The original <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">DOM <a href="#keyboardevent"><code>KeyboardEvent</code></a></a> that triggered this Leaflet event.</td>
+		<td>The original <a href="http://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">DOM <a href="#keyboardevent"><code>KeyboardEvent</code></a></a> that triggered this Leaflet event.</td>
 	</tr>
 </tbody></table>
 
@@ -23460,7 +23460,7 @@ event parent.</td>
 	<tr id='mouseevent-originalevent'>
 		<td><code><b>originalEvent</b></code></td>
 		<td><code>DOMEvent</code></td>
-		<td>The original <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">DOM <a href="#mouseevent"><code>MouseEvent</code></a></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent">DOM <code>TouchEvent</code></a> that triggered this Leaflet event.</td>
+		<td>The original <a href="http://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">DOM <a href="#mouseevent"><code>MouseEvent</code></a></a> or <a href="http://developer.mozilla.org/en-US/docs/Web/API/TouchEvent">DOM <code>TouchEvent</code></a> that triggered this Leaflet event.</td>
 	</tr>
 </tbody></table>
 

@@ -1,4 +1,4 @@
-var extend_object = function(obj, new_obj) {
+var extend_object = function (obj, new_obj) {
   var name;
 
   if (obj === new_obj) {
@@ -14,7 +14,7 @@ var extend_object = function(obj, new_obj) {
   return obj;
 };
 
-var replace_object = function(obj, replace) {
+var replace_object = function (obj, replace) {
   var name;
 
   if (obj === replace) {
@@ -30,14 +30,14 @@ var replace_object = function(obj, replace) {
   return obj;
 };
 
-var array_map = function(array, callback) {
+var array_map = function (array, callback) {
   var original_callback_params = Array.prototype.slice.call(arguments, 2),
-      array_return = [],
-      array_length = array.length,
-      i;
+    array_return = [],
+    array_length = array.length,
+    i;
 
   if (Array.prototype.map && array.map === Array.prototype.map) {
-    array_return = Array.prototype.map.call(array, function(item) {
+    array_return = Array.prototype.map.call(array, function (item) {
       var callback_params = original_callback_params.slice(0);
       callback_params.splice(0, 0, item);
 
@@ -55,9 +55,9 @@ var array_map = function(array, callback) {
   return array_return;
 };
 
-var array_flat = function(array) {
+var array_flat = function (array) {
   var new_array = [],
-      i;
+    i;
 
   for (i = 0; i < array.length; i++) {
     new_array = new_array.concat(array[i]);
@@ -66,9 +66,9 @@ var array_flat = function(array) {
   return new_array;
 };
 
-var coordsToLatLngs = function(coords, useGeoJSON) {
+var coordsToLatLngs = function (coords, useGeoJSON) {
   var first_coord = coords[0],
-      second_coord = coords[1];
+    second_coord = coords[1];
 
   if (useGeoJSON) {
     first_coord = coords[1];
@@ -78,12 +78,12 @@ var coordsToLatLngs = function(coords, useGeoJSON) {
   return new google.maps.LatLng(first_coord, second_coord);
 };
 
-var arrayToLatLng = function(coords, useGeoJSON) {
+var arrayToLatLng = function (coords, useGeoJSON) {
   var i;
 
   for (i = 0; i < coords.length; i++) {
     if (!(coords[i] instanceof google.maps.LatLng)) {
-      if (coords[i].length > 0 && typeof(coords[i][0]) === "object") {
+      if (coords[i].length > 0 && typeof (coords[i][0]) === "object") {
         coords[i] = arrayToLatLng(coords[i], useGeoJSON);
       }
       else {
@@ -96,21 +96,21 @@ var arrayToLatLng = function(coords, useGeoJSON) {
 };
 
 var getElementsByClassName = function (class_name, context) {
-    var element,
-        _class = class_name.replace('.', '');
+  var element,
+    _class = class_name.replace('.', '');
 
-    if ('jQuery' in this && context) {
-        element = $("." + _class, context)[0];
-    } else {
-        element = document.getElementsByClassName(_class)[0];
-    }
-    return element;
+  if ('jQuery' in this && context) {
+    element = $("." + _class, context)[0];
+  } else {
+    element = document.getElementsByClassName(_class)[0];
+  }
+  return element;
 
 };
 
-var getElementById = function(id, context) {
+var getElementById = function (id, context) {
   var element,
-  id = id.replace('#', '');
+    id = id.replace('#', '');
 
   if ('jQuery' in window && context) {
     element = $('#' + id, context)[0];
@@ -121,16 +121,16 @@ var getElementById = function(id, context) {
   return element;
 };
 
-var findAbsolutePosition = function(obj)  {
+var findAbsolutePosition = function (obj) {
   var curleft = 0,
-      curtop = 0;
+    curtop = 0;
 
   if (obj.getBoundingClientRect) {
-      var rect = obj.getBoundingClientRect();
-      var sx = -(window.scrollX ? window.scrollX : window.pageXOffset);
-      var sy = -(window.scrollY ? window.scrollY : window.pageYOffset);
+    var rect = obj.getBoundingClientRect();
+    var sx = -(window.scrollX ? window.scrollX : window.pageXOffset);
+    var sy = -(window.scrollY ? window.scrollY : window.pageYOffset);
 
-      return [(rect.left - sx), (rect.top - sy)];
+    return [(rect.left - sx), (rect.top - sy)];
   }
 
   if (obj.offsetParent) {
@@ -143,7 +143,7 @@ var findAbsolutePosition = function(obj)  {
   return [curleft, curtop];
 };
 
-var GMaps = (function(global) {
+var GMaps = (function (global) {
   "use strict";
 
   var doc = document;
@@ -151,20 +151,20 @@ var GMaps = (function(global) {
    * Creates a new GMaps instance, including a Google Maps map.
    * @class GMaps
    * @constructs
-   * @param {object} options - `options` accepts all the [MapOptions](https://developers.google.com/maps/documentation/javascript/reference#MapOptions) and [events](https://developers.google.com/maps/documentation/javascript/reference#Map) listed in the Google Maps API. Also accepts:
+   * @param {object} options - `options` accepts all the [MapOptions](http://developers.google.com/maps/documentation/javascript/reference#MapOptions) and [events](http://developers.google.com/maps/documentation/javascript/reference#Map) listed in the Google Maps API. Also accepts:
    * * `lat` (number): Latitude of the map's center
    * * `lng` (number): Longitude of the map's center
    * * `el` (string or HTMLElement): container where the map will be rendered
    * * `markerClusterer` (function): A function to create a marker cluster. You can use MarkerClusterer or MarkerClustererPlus.
    */
-  var GMaps = function(options) {
+  var GMaps = function (options) {
 
     if (!(typeof window.google === 'object' && window.google.maps)) {
       if (typeof window.console === 'object' && window.console.error) {
-        console.error('Google Maps API is required. Please register the following JavaScript library https://maps.googleapis.com/maps/api/js.');
+        console.error('Google Maps API is required. Please register the following JavaScript library http://maps.googleapis.com/maps/api/js.');
       }
 
-      return function() {};
+      return function () { };
     }
 
     if (!this) return new GMaps(options);
@@ -172,70 +172,70 @@ var GMaps = (function(global) {
     options.zoom = options.zoom || 15;
     options.mapType = options.mapType || 'roadmap';
 
-    var valueOrDefault = function(value, defaultValue) {
+    var valueOrDefault = function (value, defaultValue) {
       return value === undefined ? defaultValue : value;
     };
 
     var self = this,
-        i,
-        events_that_hide_context_menu = [
-          'bounds_changed', 'center_changed', 'click', 'dblclick', 'drag',
-          'dragend', 'dragstart', 'idle', 'maptypeid_changed', 'projection_changed',
-          'resize', 'tilesloaded', 'zoom_changed'
-        ],
-        events_that_doesnt_hide_context_menu = ['mousemove', 'mouseout', 'mouseover'],
-        options_to_be_deleted = ['el', 'lat', 'lng', 'mapType', 'width', 'height', 'markerClusterer', 'enableNewStyle'],
-        identifier = options.el || options.div,
-        markerClustererFunction = options.markerClusterer,
-        mapType = google.maps.MapTypeId[options.mapType.toUpperCase()],
-        map_center = new google.maps.LatLng(options.lat, options.lng),
-        zoomControl = valueOrDefault(options.zoomControl, true),
-        zoomControlOpt = options.zoomControlOpt || {
-          style: 'DEFAULT',
-          position: 'TOP_LEFT'
+      i,
+      events_that_hide_context_menu = [
+        'bounds_changed', 'center_changed', 'click', 'dblclick', 'drag',
+        'dragend', 'dragstart', 'idle', 'maptypeid_changed', 'projection_changed',
+        'resize', 'tilesloaded', 'zoom_changed'
+      ],
+      events_that_doesnt_hide_context_menu = ['mousemove', 'mouseout', 'mouseover'],
+      options_to_be_deleted = ['el', 'lat', 'lng', 'mapType', 'width', 'height', 'markerClusterer', 'enableNewStyle'],
+      identifier = options.el || options.div,
+      markerClustererFunction = options.markerClusterer,
+      mapType = google.maps.MapTypeId[options.mapType.toUpperCase()],
+      map_center = new google.maps.LatLng(options.lat, options.lng),
+      zoomControl = valueOrDefault(options.zoomControl, true),
+      zoomControlOpt = options.zoomControlOpt || {
+        style: 'DEFAULT',
+        position: 'TOP_LEFT'
+      },
+      zoomControlStyle = zoomControlOpt.style || 'DEFAULT',
+      zoomControlPosition = zoomControlOpt.position || 'TOP_LEFT',
+      panControl = valueOrDefault(options.panControl, true),
+      mapTypeControl = valueOrDefault(options.mapTypeControl, true),
+      scaleControl = valueOrDefault(options.scaleControl, true),
+      streetViewControl = valueOrDefault(options.streetViewControl, true),
+      overviewMapControl = valueOrDefault(overviewMapControl, true),
+      map_options = {},
+      map_base_options = {
+        zoom: this.zoom,
+        center: map_center,
+        mapTypeId: mapType
+      },
+      map_controls_options = {
+        panControl: panControl,
+        zoomControl: zoomControl,
+        zoomControlOptions: {
+          style: google.maps.ZoomControlStyle[zoomControlStyle],
+          position: google.maps.ControlPosition[zoomControlPosition]
         },
-        zoomControlStyle = zoomControlOpt.style || 'DEFAULT',
-        zoomControlPosition = zoomControlOpt.position || 'TOP_LEFT',
-        panControl = valueOrDefault(options.panControl, true),
-        mapTypeControl = valueOrDefault(options.mapTypeControl, true),
-        scaleControl = valueOrDefault(options.scaleControl, true),
-        streetViewControl = valueOrDefault(options.streetViewControl, true),
-        overviewMapControl = valueOrDefault(overviewMapControl, true),
-        map_options = {},
-        map_base_options = {
-          zoom: this.zoom,
-          center: map_center,
-          mapTypeId: mapType
-        },
-        map_controls_options = {
-          panControl: panControl,
-          zoomControl: zoomControl,
-          zoomControlOptions: {
-            style: google.maps.ZoomControlStyle[zoomControlStyle],
-            position: google.maps.ControlPosition[zoomControlPosition]
-          },
-          mapTypeControl: mapTypeControl,
-          scaleControl: scaleControl,
-          streetViewControl: streetViewControl,
-          overviewMapControl: overviewMapControl
-        };
+        mapTypeControl: mapTypeControl,
+        scaleControl: scaleControl,
+        streetViewControl: streetViewControl,
+        overviewMapControl: overviewMapControl
+      };
 
-      if (typeof(options.el) === 'string' || typeof(options.div) === 'string') {
-        if (identifier.indexOf("#") > -1) {
-            /**
-             * Container element
-             *
-             * @type {HTMLElement}
-             */
-            this.el = getElementById(identifier, options.context);
-        } else {
-            this.el = getElementsByClassName.apply(this, [identifier, options.context]);
-        }
+    if (typeof (options.el) === 'string' || typeof (options.div) === 'string') {
+      if (identifier.indexOf("#") > -1) {
+        /**
+         * Container element
+         *
+         * @type {HTMLElement}
+         */
+        this.el = getElementById(identifier, options.context);
       } else {
-          this.el = identifier;
+        this.el = getElementsByClassName.apply(this, [identifier, options.context]);
       }
+    } else {
+      this.el = identifier;
+    }
 
-    if (typeof(this.el) === 'undefined' || this.el === null) {
+    if (typeof (this.el) === 'undefined' || this.el === null) {
       throw 'No element defined.';
     }
 
@@ -309,7 +309,7 @@ var GMaps = (function(global) {
       delete options[options_to_be_deleted[i]];
     }
 
-    if(options.disableDefaultUI != true) {
+    if (options.disableDefaultUI != true) {
       map_base_options = extend_object(map_base_options, map_controls_options);
     }
 
@@ -339,11 +339,11 @@ var GMaps = (function(global) {
       this.markerClusterer = markerClustererFunction.apply(this, [this.map]);
     }
 
-    var buildContextMenuHTML = function(control, e) {
+    var buildContextMenuHTML = function (control, e) {
       var html = '',
-          options = window.context_menu[self.el.id][control];
+        options = window.context_menu[self.el.id][control];
 
-      for (var i in options){
+      for (var i in options) {
         if (options.hasOwnProperty(i)) {
           var option = options[i];
 
@@ -358,13 +358,13 @@ var GMaps = (function(global) {
       context_menu_element.innerHTML = html;
 
       var context_menu_items = context_menu_element.getElementsByTagName('a'),
-          context_menu_items_count = context_menu_items.length,
-          i;
+        context_menu_items_count = context_menu_items.length,
+        i;
 
       for (i = 0; i < context_menu_items_count; i++) {
         var context_menu_item = context_menu_items[i];
 
-        var assign_menu_item_action = function(ev){
+        var assign_menu_item_action = function (ev) {
           ev.preventDefault();
 
           options[this.id.replace(control + '_', '')].action.apply(self, [e]);
@@ -376,8 +376,8 @@ var GMaps = (function(global) {
       }
 
       var position = findAbsolutePosition.apply(this, [self.el]),
-          left = position[0] + e.pixel.x - 15,
-          top = position[1] + e.pixel.y- 15;
+        left = position[0] + e.pixel.x - 15,
+        top = position[1] + e.pixel.y - 15;
 
       context_menu_element.style.left = left + "px";
       context_menu_element.style.top = top + "px";
@@ -385,16 +385,16 @@ var GMaps = (function(global) {
       // context_menu_element.style.display = 'block';
     };
 
-    this.buildContextMenu = function(control, e) {
+    this.buildContextMenu = function (control, e) {
       if (control === 'marker') {
         e.pixel = {};
 
         var overlay = new google.maps.OverlayView();
         overlay.setMap(self.map);
 
-        overlay.draw = function() {
+        overlay.draw = function () {
           var projection = overlay.getProjection(),
-              position = e.marker.getPosition();
+            position = e.marker.getPosition();
 
           e.pixel = projection.fromLatLngToContainerPixel(position);
 
@@ -407,7 +407,7 @@ var GMaps = (function(global) {
 
       var context_menu_element = getElementById('gmaps_context_menu');
 
-      setTimeout(function() {
+      setTimeout(function () {
         context_menu_element.style.display = 'block';
       }, 0);
     };
@@ -422,11 +422,11 @@ var GMaps = (function(global) {
      *   * `name` (string): Item's identifier.
      *   * `action` (function): Function triggered after selecting the context menu item.
      */
-    this.setContextMenu = function(options) {
+    this.setContextMenu = function (options) {
       window.context_menu[self.el.id][options.control] = {};
 
       var i,
-          ul = doc.createElement('ul');
+        ul = doc.createElement('ul');
 
       for (i in options.options) {
         if (options.options.hasOwnProperty(i)) {
@@ -454,9 +454,9 @@ var GMaps = (function(global) {
 
       var context_menu_element = getElementById('gmaps_context_menu');
 
-      google.maps.event.addDomListener(context_menu_element, 'mouseout', function(ev) {
+      google.maps.event.addDomListener(context_menu_element, 'mouseout', function (ev) {
         if (!ev.relatedTarget || !this.contains(ev.relatedTarget)) {
-          window.setTimeout(function(){
+          window.setTimeout(function () {
             context_menu_element.style.display = 'none';
           }, 400);
         }
@@ -466,7 +466,7 @@ var GMaps = (function(global) {
     /**
      * Hide the current context menu
      */
-    this.hideContextMenu = function() {
+    this.hideContextMenu = function () {
       var context_menu_element = getElementById('gmaps_context_menu');
 
       if (context_menu_element) {
@@ -474,8 +474,8 @@ var GMaps = (function(global) {
       }
     };
 
-    var setupListener = function(object, name) {
-      google.maps.event.addListener(object, name, function(e){
+    var setupListener = function (object, name) {
+      google.maps.event.addListener(object, name, function (e) {
         if (e == undefined) {
           e = this;
         }
@@ -505,12 +505,12 @@ var GMaps = (function(global) {
       }
     }
 
-    google.maps.event.addListener(this.map, 'rightclick', function(e) {
+    google.maps.event.addListener(this.map, 'rightclick', function (e) {
       if (options.rightclick) {
         options.rightclick.apply(this, [e]);
       }
 
-      if(window.context_menu[self.el.id]['map'] != undefined) {
+      if (window.context_menu[self.el.id]['map'] != undefined) {
         self.buildContextMenu('map', e);
       }
     });
@@ -518,20 +518,20 @@ var GMaps = (function(global) {
     /**
      * Trigger a `resize` event, useful if you need to repaint the current map (for changes in the viewport or display / hide actions).
      */
-    this.refresh = function() {
+    this.refresh = function () {
       google.maps.event.trigger(this.map, 'resize');
     };
 
     /**
      * Adjust the map zoom to include all the markers added in the map.
      */
-    this.fitZoom = function() {
+    this.fitZoom = function () {
       var latLngs = [],
-          markers_length = this.markers.length,
-          i;
+        markers_length = this.markers.length,
+        i;
 
       for (i = 0; i < markers_length; i++) {
-        if(typeof(this.markers[i].visible) === 'boolean' && this.markers[i].visible) {
+        if (typeof (this.markers[i].visible) === 'boolean' && this.markers[i].visible) {
           latLngs.push(this.markers[i].getPosition());
         }
       }
@@ -544,12 +544,12 @@ var GMaps = (function(global) {
      *
      * @param {array} latLngs - Collection of `google.maps.LatLng` objects.
      */
-    this.fitLatLngBounds = function(latLngs) {
+    this.fitLatLngBounds = function (latLngs) {
       var total = latLngs.length,
-          bounds = new google.maps.LatLngBounds(),
-          i;
+        bounds = new google.maps.LatLngBounds(),
+        i;
 
-      for(i = 0; i < total; i++) {
+      for (i = 0; i < total; i++) {
         bounds.extend(latLngs[i]);
       }
 
@@ -563,7 +563,7 @@ var GMaps = (function(global) {
      * @param {number} lng - Longitude of the coordinate.
      * @param {function} [callback] - Callback that will be executed after the map is centered.
      */
-    this.setCenter = function(lat, lng, callback) {
+    this.setCenter = function (lat, lng, callback) {
       this.map.panTo(new google.maps.LatLng(lat, lng));
 
       if (callback) {
@@ -576,7 +576,7 @@ var GMaps = (function(global) {
      *
      * @returns {HTMLElement} the element container.
      */
-    this.getElement = function() {
+    this.getElement = function () {
       return this.el;
     };
 
@@ -585,7 +585,7 @@ var GMaps = (function(global) {
      *
      * @param {number} [magnitude] - The number of times the map will be zoomed in.
      */
-    this.zoomIn = function(value) {
+    this.zoomIn = function (value) {
       value = value || 1;
 
       this.zoom = this.map.getZoom() + value;
@@ -597,7 +597,7 @@ var GMaps = (function(global) {
      *
      * @param {number} [magnitude] - The number of times the map will be zoomed out.
      */
-    this.zoomOut = function(value) {
+    this.zoomOut = function (value) {
       value = value || 1;
 
       this.zoom = this.map.getZoom() - value;
@@ -605,17 +605,17 @@ var GMaps = (function(global) {
     };
 
     var native_methods = [],
-        method;
+      method;
 
     for (method in this.map) {
-      if (typeof(this.map[method]) == 'function' && !this[method]) {
+      if (typeof (this.map[method]) == 'function' && !this[method]) {
         native_methods.push(method);
       }
     }
 
     for (i = 0; i < native_methods.length; i++) {
-      (function(gmaps, scope, method_name) {
-        gmaps[method_name] = function(){
+      (function (gmaps, scope, method_name) {
+        gmaps[method_name] = function () {
           return scope[method_name].apply(scope, arguments);
         };
       })(this, this.map, native_methods[i]);

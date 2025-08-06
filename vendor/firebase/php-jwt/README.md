@@ -1,11 +1,11 @@
-![Build Status](https://github.com/firebase/php-jwt/actions/workflows/tests.yml/badge.svg)
-[![Latest Stable Version](https://poser.pugx.org/firebase/php-jwt/v/stable)](https://packagist.org/packages/firebase/php-jwt)
-[![Total Downloads](https://poser.pugx.org/firebase/php-jwt/downloads)](https://packagist.org/packages/firebase/php-jwt)
-[![License](https://poser.pugx.org/firebase/php-jwt/license)](https://packagist.org/packages/firebase/php-jwt)
+![Build Status](http://github.com/firebase/php-jwt/actions/workflows/tests.yml/badge.svg)
+[![Latest Stable Version](http://poser.pugx.org/firebase/php-jwt/v/stable)](http://packagist.org/packages/firebase/php-jwt)
+[![Total Downloads](http://poser.pugx.org/firebase/php-jwt/downloads)](http://packagist.org/packages/firebase/php-jwt)
+[![License](http://poser.pugx.org/firebase/php-jwt/license)](http://packagist.org/packages/firebase/php-jwt)
 
 PHP-JWT
 =======
-A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to [RFC 7519](https://tools.ietf.org/html/rfc7519).
+A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to [RFC 7519](http://tools.ietf.org/html/rfc7519).
 
 Installation
 ------------
@@ -40,7 +40,7 @@ $payload = [
 /**
  * IMPORTANT:
  * You must specify supported algorithms for your application. See
- * https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-40
+ * http://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-40
  * for a list of spec-compliant algorithms.
  */
 $jwt = JWT::encode($payload, $key, 'HS256');
@@ -286,7 +286,7 @@ use Firebase\JWT\JWK;
 use Firebase\JWT\JWT;
 
 // Set of keys. The "keys" key is required. For example, the JSON response to
-// this endpoint: https://www.gstatic.com/iap/verify/public_key-jwk
+// this endpoint: http://www.gstatic.com/iap/verify/public_key-jwk
 $jwks = ['keys' => []];
 
 // JWK::parseKeySet($jwks) returns an associative array of **kid** to Firebase\JWT\Key
@@ -309,7 +309,7 @@ use Firebase\JWT\CachedKeySet;
 use Firebase\JWT\JWT;
 
 // The URI for the JWKS you wish to cache the results from
-$jwksUri = 'https://www.gstatic.com/iap/verify/public_key-jwk';
+$jwksUri = 'http://www.gstatic.com/iap/verify/public_key-jwk';
 
 // Create an HTTP client (can be any PSR-7 compatible HTTP client)
 $httpClient = new GuzzleHttp\Client();

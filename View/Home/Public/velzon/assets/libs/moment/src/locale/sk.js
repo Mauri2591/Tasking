@@ -1,7 +1,7 @@
 //! moment.js locale configuration
 //! locale : Slovak [sk]
-//! author : Martin Minka : https://github.com/k2s
-//! based on work of petrbela : https://github.com/petrbela
+//! author : Martin Minka : http://github.com/k2s
+//! based on work of petrbela : http://github.com/petrbela
 
 import moment from '../moment';
 
@@ -71,20 +71,20 @@ function translate(number, withoutSuffix, key, isFuture) {
 }
 
 export default moment.defineLocale('sk', {
-    months : months,
-    monthsShort : monthsShort,
-    weekdays : 'nedeľa_pondelok_utorok_streda_štvrtok_piatok_sobota'.split('_'),
-    weekdaysShort : 'ne_po_ut_st_št_pi_so'.split('_'),
-    weekdaysMin : 'ne_po_ut_st_št_pi_so'.split('_'),
-    longDateFormat : {
+    months: months,
+    monthsShort: monthsShort,
+    weekdays: 'nedeľa_pondelok_utorok_streda_štvrtok_piatok_sobota'.split('_'),
+    weekdaysShort: 'ne_po_ut_st_št_pi_so'.split('_'),
+    weekdaysMin: 'ne_po_ut_st_št_pi_so'.split('_'),
+    longDateFormat: {
         LT: 'H:mm',
-        LTS : 'H:mm:ss',
-        L : 'DD.MM.YYYY',
-        LL : 'D. MMMM YYYY',
-        LLL : 'D. MMMM YYYY H:mm',
-        LLLL : 'dddd D. MMMM YYYY H:mm'
+        LTS: 'H:mm:ss',
+        L: 'DD.MM.YYYY',
+        LL: 'D. MMMM YYYY',
+        LLL: 'D. MMMM YYYY H:mm',
+        LLLL: 'dddd D. MMMM YYYY H:mm'
     },
-    calendar : {
+    calendar: {
         sameDay: '[dnes o] LT',
         nextDay: '[zajtra o] LT',
         nextWeek: function () {
@@ -123,27 +123,27 @@ export default moment.defineLocale('sk', {
         },
         sameElse: 'L'
     },
-    relativeTime : {
-        future : 'za %s',
-        past : 'pred %s',
-        s : translate,
-        ss : translate,
-        m : translate,
-        mm : translate,
-        h : translate,
-        hh : translate,
-        d : translate,
-        dd : translate,
-        M : translate,
-        MM : translate,
-        y : translate,
-        yy : translate
+    relativeTime: {
+        future: 'za %s',
+        past: 'pred %s',
+        s: translate,
+        ss: translate,
+        m: translate,
+        mm: translate,
+        h: translate,
+        hh: translate,
+        d: translate,
+        dd: translate,
+        M: translate,
+        MM: translate,
+        y: translate,
+        yy: translate
     },
     dayOfMonthOrdinalParse: /\d{1,2}\./,
-    ordinal : '%d.',
-    week : {
-        dow : 1, // Monday is the first day of the week.
-        doy : 4  // The week that contains Jan 4th is the first week of the year.
+    ordinal: '%d.',
+    week: {
+        dow: 1, // Monday is the first day of the week.
+        doy: 4  // The week that contains Jan 4th is the first week of the year.
     }
 });
 

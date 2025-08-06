@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Polish [pl]
-//! author : Rafal Hirsz : https://github.com/evoL
+//! author : Rafal Hirsz : http://github.com/evoL
 
 import moment from '../moment';
 
@@ -19,7 +19,7 @@ function translate(number, withoutSuffix, key) {
         case 'mm':
             return result + (plural(number) ? 'minuty' : 'minut');
         case 'h':
-            return withoutSuffix  ? 'godzina'  : 'godzinę';
+            return withoutSuffix ? 'godzina' : 'godzinę';
         case 'hh':
             return result + (plural(number) ? 'godziny' : 'godzin');
         case 'MM':
@@ -30,7 +30,7 @@ function translate(number, withoutSuffix, key) {
 }
 
 export default moment.defineLocale('pl', {
-    months : function (momentToFormat, format) {
+    months: function (momentToFormat, format) {
         if (!momentToFormat) {
             return monthsNominative;
         } else if (format === '') {
@@ -44,19 +44,19 @@ export default moment.defineLocale('pl', {
             return monthsNominative[momentToFormat.month()];
         }
     },
-    monthsShort : 'sty_lut_mar_kwi_maj_cze_lip_sie_wrz_paź_lis_gru'.split('_'),
-    weekdays : 'niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota'.split('_'),
-    weekdaysShort : 'ndz_pon_wt_śr_czw_pt_sob'.split('_'),
-    weekdaysMin : 'Nd_Pn_Wt_Śr_Cz_Pt_So'.split('_'),
-    longDateFormat : {
-        LT : 'HH:mm',
-        LTS : 'HH:mm:ss',
-        L : 'DD.MM.YYYY',
-        LL : 'D MMMM YYYY',
-        LLL : 'D MMMM YYYY HH:mm',
-        LLLL : 'dddd, D MMMM YYYY HH:mm'
+    monthsShort: 'sty_lut_mar_kwi_maj_cze_lip_sie_wrz_paź_lis_gru'.split('_'),
+    weekdays: 'niedziela_poniedziałek_wtorek_środa_czwartek_piątek_sobota'.split('_'),
+    weekdaysShort: 'ndz_pon_wt_śr_czw_pt_sob'.split('_'),
+    weekdaysMin: 'Nd_Pn_Wt_Śr_Cz_Pt_So'.split('_'),
+    longDateFormat: {
+        LT: 'HH:mm',
+        LTS: 'HH:mm:ss',
+        L: 'DD.MM.YYYY',
+        LL: 'D MMMM YYYY',
+        LLL: 'D MMMM YYYY HH:mm',
+        LLLL: 'dddd, D MMMM YYYY HH:mm'
     },
-    calendar : {
+    calendar: {
         sameDay: '[Dziś o] LT',
         nextDay: '[Jutro o] LT',
         nextWeek: function () {
@@ -92,26 +92,26 @@ export default moment.defineLocale('pl', {
         },
         sameElse: 'L'
     },
-    relativeTime : {
-        future : 'za %s',
-        past : '%s temu',
-        s : 'kilka sekund',
-        ss : translate,
-        m : translate,
-        mm : translate,
-        h : translate,
-        hh : translate,
-        d : '1 dzień',
-        dd : '%d dni',
-        M : 'miesiąc',
-        MM : translate,
-        y : 'rok',
-        yy : translate
+    relativeTime: {
+        future: 'za %s',
+        past: '%s temu',
+        s: 'kilka sekund',
+        ss: translate,
+        m: translate,
+        mm: translate,
+        h: translate,
+        hh: translate,
+        d: '1 dzień',
+        dd: '%d dni',
+        M: 'miesiąc',
+        MM: translate,
+        y: 'rok',
+        yy: translate
     },
     dayOfMonthOrdinalParse: /\d{1,2}\./,
-    ordinal : '%d.',
-    week : {
-        dow : 1, // Monday is the first day of the week.
-        doy : 4  // The week that contains Jan 4th is the first week of the year.
+    ordinal: '%d.',
+    week: {
+        dow: 1, // Monday is the first day of the week.
+        doy: 4  // The week that contains Jan 4th is the first week of the year.
     }
 });

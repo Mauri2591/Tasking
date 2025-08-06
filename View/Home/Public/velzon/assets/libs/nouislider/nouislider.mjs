@@ -102,11 +102,11 @@ function removeClass(el, className) {
         el.className = el.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ");
     }
 }
-// https://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
+// http://plainjs.com/javascript/attributes/adding-removing-and-testing-for-classes-9/
 function hasClass(el, className) {
     return el.classList ? el.classList.contains(className) : new RegExp("\\b" + className + "\\b").test(el.className);
 }
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
+// http://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY#Notes
 function getPageOffset(doc) {
     var supportPageOffset = window.pageXOffset !== undefined;
     var isCSS1Compat = (doc.compatMode || "") === "CSS1Compat";
@@ -149,7 +149,7 @@ function getActions() {
                 end: "mouseup touchend",
             };
 }
-// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+// http://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
 // Issue #785
 function getSupportsPassive() {
     var supportsPassive = false;
@@ -875,7 +875,7 @@ function testOptions(options) {
     // All recent browsers accept unprefixed transform.
     // We need -ms- for IE9 and -webkit- for older Android;
     // Assume use of -webkit- if unprefixed and -ms- are not supported.
-    // https://caniuse.com/#feat=transforms2d
+    // http://caniuse.com/#feat=transforms2d
     var d = document.createElement("div");
     var msPrefix = d.style.msTransform !== undefined;
     var noPrefix = d.style.transform !== undefined;
@@ -931,7 +931,7 @@ function scope(target, options, originalOptions) {
         addNodeTo(handle, options.cssClasses.touchArea);
         handle.setAttribute("data-handle", String(handleNumber));
         if (options.keyboardSupport) {
-            // https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
+            // http://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
             // 0 = focusable and reachable
             handle.setAttribute("tabindex", "0");
             handle.addEventListener("keydown", function (event) {
@@ -1311,7 +1311,7 @@ function scope(target, options, originalOptions) {
             // iOS safari does not, so it doesn't get to benefit from passive scrolling. iOS does support
             // touch-action: manipulation, but that allows panning, which breaks
             // sliders after zooming/on non-responsive pages.
-            // See: https://bugs.webkit.org/show_bug.cgi?id=133112
+            // See: http://bugs.webkit.org/show_bug.cgi?id=133112
             if (!supportsPassive) {
                 e.preventDefault();
             }
@@ -1434,7 +1434,7 @@ function scope(target, options, originalOptions) {
     function eventMove(event, data) {
         // Fix #498
         // Check value of .buttons in 'start' to work around a bug in IE10 mobile (data.buttonsProperty).
-        // https://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
+        // http://connect.microsoft.com/IE/feedback/details/927005/mobile-ie10-windows-phone-buttons-property-of-pointermove-event-always-zero
         // IE9 has .buttons and .which zero on mousemove.
         // Firefox breaks the spec MDN defines.
         if (navigator.appVersion.indexOf("MSIE 9") === -1 && event.buttons === 0 && data.buttonsProperty !== 0) {
@@ -1603,7 +1603,7 @@ function scope(target, options, originalOptions) {
             verticalKeys.reverse();
             largeStepKeys.reverse();
         }
-        // Strip "Arrow" for IE compatibility. https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
+        // Strip "Arrow" for IE compatibility. http://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key
         var key = event.key.replace("Arrow", "");
         var isLargeDown = key === largeStepKeys[0];
         var isLargeUp = key === largeStepKeys[1];
@@ -1747,20 +1747,20 @@ function scope(target, options, originalOptions) {
             if (eventName === eventType) {
                 scope_Events[targetEvent].forEach(function (callback) {
                     callback.call(
-                    // Use the slider public API as the scope ('this')
-                    scope_Self, 
-                    // Return values as array, so arg_1[arg_2] is always valid.
-                    scope_Values.map(options.format.to), 
-                    // Handle index, 0 or 1
-                    handleNumber, 
-                    // Un-formatted slider values
-                    scope_Values.slice(), 
-                    // Event is fired by tap, true or false
-                    tap || false, 
-                    // Left offset of the handle, in relation to the slider
-                    scope_Locations.slice(), 
-                    // add the slider public API to an accessible parameter when this is unavailable
-                    scope_Self);
+                        // Use the slider public API as the scope ('this')
+                        scope_Self,
+                        // Return values as array, so arg_1[arg_2] is always valid.
+                        scope_Values.map(options.format.to),
+                        // Handle index, 0 or 1
+                        handleNumber,
+                        // Un-formatted slider values
+                        scope_Values.slice(),
+                        // Event is fired by tap, true or false
+                        tap || false,
+                        // Left offset of the handle, in relation to the slider
+                        scope_Locations.slice(),
+                        // add the slider public API to an accessible parameter when this is unavailable
+                        scope_Self);
                 });
             }
         });
@@ -1872,7 +1872,7 @@ function scope(target, options, originalOptions) {
     // Takes a base value and an offset. This offset is used for the connect bar size.
     // In the initial design for this feature, the origin element was 1% wide.
     // Unfortunately, a rounding bug in Chrome makes it impossible to implement this feature
-    // in this manner: https://bugs.chromium.org/p/chromium/issues/detail?id=798223
+    // in this manner: http://bugs.chromium.org/p/chromium/issues/detail?id=798223
     function transformDirection(a, b) {
         return options.dir ? 100 - a - b : a;
     }

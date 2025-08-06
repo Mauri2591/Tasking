@@ -1,10 +1,10 @@
-# Sortable &nbsp; [![Financial Contributors on Open Collective](https://opencollective.com/Sortable/all/badge.svg?label=financial+contributors)](https://opencollective.com/Sortable) [![CircleCI](https://circleci.com/gh/SortableJS/Sortable.svg?style=svg)](https://circleci.com/gh/SortableJS/Sortable) [![DeepScan grade](https://deepscan.io/api/teams/3901/projects/5666/branches/43977/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=3901&pid=5666&bid=43977) [![](https://data.jsdelivr.com/v1/package/npm/sortablejs/badge)](https://www.jsdelivr.com/package/npm/sortablejs) [![npm](https://img.shields.io/npm/v/sortablejs.svg)](https://www.npmjs.com/package/sortablejs)
+# Sortable &nbsp; [![Financial Contributors on Open Collective](http://opencollective.com/Sortable/all/badge.svg?label=financial+contributors)](http://opencollective.com/Sortable) [![CircleCI](http://circleci.com/gh/SortableJS/Sortable.svg?style=svg)](http://circleci.com/gh/SortableJS/Sortable) [![DeepScan grade](http://deepscan.io/api/teams/3901/projects/5666/branches/43977/badge/grade.svg)](http://deepscan.io/dashboard#view=project&tid=3901&pid=5666&bid=43977) [![](http://data.jsdelivr.com/v1/package/npm/sortablejs/badge)](http://www.jsdelivr.com/package/npm/sortablejs) [![npm](http://img.shields.io/npm/v/sortablejs.svg)](http://www.npmjs.com/package/sortablejs)
 
 Sortable is a JavaScript library for reorderable drag-and-drop lists.
 
 Demo: http://sortablejs.github.io/Sortable/
 
-[<img width="250px" src="https://raw.githubusercontent.com/SortableJS/Sortable/HEAD/st/saucelabs.svg?sanitize=true">](https://saucelabs.com/)
+[<img width="250px" src="http://raw.githubusercontent.com/SortableJS/Sortable/HEAD/st/saucelabs.svg?sanitize=true">](http://saucelabs.com/)
 
 ## Features
 
@@ -15,26 +15,26 @@ Demo: http://sortablejs.github.io/Sortable/
  * Smart auto-scrolling
  * Advanced swap detection
  * Smooth animations
- * [Multi-drag](https://github.com/SortableJS/Sortable/tree/master/plugins/MultiDrag) support
+ * [Multi-drag](http://github.com/SortableJS/Sortable/tree/master/plugins/MultiDrag) support
  * Support for CSS transforms
  * Built using native HTML5 drag and drop API
  * Supports
-   * [Meteor](https://github.com/SortableJS/meteor-sortablejs)
+   * [Meteor](http://github.com/SortableJS/meteor-sortablejs)
    * Angular
-     * [2.0+](https://github.com/SortableJS/angular-sortablejs)
-     * [1.&ast;](https://github.com/SortableJS/angular-legacy-sortablejs)
+     * [2.0+](http://github.com/SortableJS/angular-sortablejs)
+     * [1.&ast;](http://github.com/SortableJS/angular-legacy-sortablejs)
    * React
-     * [ES2015+](https://github.com/SortableJS/react-sortablejs)
-     * [Mixin](https://github.com/SortableJS/react-mixin-sortablejs)
-   * [Knockout](https://github.com/SortableJS/knockout-sortablejs)
-   * [Polymer](https://github.com/SortableJS/polymer-sortablejs)
-   * [Vue](https://github.com/SortableJS/Vue.Draggable)
-   * [Ember](https://github.com/SortableJS/ember-sortablejs)
+     * [ES2015+](http://github.com/SortableJS/react-sortablejs)
+     * [Mixin](http://github.com/SortableJS/react-mixin-sortablejs)
+   * [Knockout](http://github.com/SortableJS/knockout-sortablejs)
+   * [Polymer](http://github.com/SortableJS/polymer-sortablejs)
+   * [Vue](http://github.com/SortableJS/Vue.Draggable)
+   * [Ember](http://github.com/SortableJS/ember-sortablejs)
  * Supports any CSS library, e.g. [Bootstrap](#bs)
  * Simple API
  * Support for [plugins](#plugins)
  * [CDN](#cdn)
- * No jQuery required (but there is [support](https://github.com/SortableJS/jquery-sortablejs))
+ * No jQuery required (but there is [support](http://github.com/SortableJS/jquery-sortablejs))
  * Typescript definitions at `@types/sortablejs`
 
 
@@ -43,10 +43,10 @@ Demo: http://sortablejs.github.io/Sortable/
 
 ### Articles
 
- * [Dragging Multiple Items in Sortable](https://github.com/SortableJS/Sortable/wiki/Dragging-Multiple-Items-in-Sortable) (April 26, 2019)
- * [Swap Thresholds and Direction](https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction) (December 2, 2018)
- * [Sortable v1.0 — New capabilities](https://github.com/SortableJS/Sortable/wiki/Sortable-v1.0-—-New-capabilities/) (December 22, 2014)
- * [Sorting with the help of HTML5 Drag'n'Drop API](https://github.com/SortableJS/Sortable/wiki/Sorting-with-the-help-of-HTML5-Drag'n'Drop-API/) (December 23, 2013)
+ * [Dragging Multiple Items in Sortable](http://github.com/SortableJS/Sortable/wiki/Dragging-Multiple-Items-in-Sortable) (April 26, 2019)
+ * [Swap Thresholds and Direction](http://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction) (December 2, 2018)
+ * [Sortable v1.0 — New capabilities](http://github.com/SortableJS/Sortable/wiki/Sortable-v1.0-—-New-capabilities/) (December 22, 2014)
+ * [Sorting with the help of HTML5 Drag'n'Drop API](http://github.com/SortableJS/Sortable/wiki/Sorting-with-the-help-of-HTML5-Drag'n'Drop-API/) (December 23, 2013)
 
 <br/>
 
@@ -106,7 +106,7 @@ var el = document.getElementById('items');
 var sortable = Sortable.create(el);
 ```
 
-You can use any element for the list and its elements, not just `ul`/`li`. Here is an [example with `div`s](https://jsbin.com/visimub/edit?html,js,output).
+You can use any element for the list and its elements, not just `ul`/`li`. Here is an [example with `div`s](http://jsbin.com/visimub/edit?html,js,output).
 
 
 ---
@@ -123,7 +123,7 @@ var sortable = new Sortable(el, {
 	disabled: false, // Disables the sortable if set to true.
 	store: null,  // @see Store
 	animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
-	easing: "cubic-bezier(1, 0, 0, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
+	easing: "cubic-bezier(1, 0, 0, 1)", // Easing for animation. Defaults to null. See http://easings.net/ for examples.
 	handle: ".my-handle",  // Drag handle selector within list items
 	filter: ".ignore-elements",  // Selectors that do not lead to dragging (String or Function)
 	preventOnFilter: true, // Call `event.preventDefault()` when triggered `filter`
@@ -210,7 +210,7 @@ var sortable = new Sortable(el, {
 
 	// Event when you move an item in the list or between lists
 	onMove: function (/**Event*/evt, /**Event*/originalEvent) {
-		// Example: https://jsbin.com/nawahef/edit?js,output
+		// Example: http://jsbin.com/nawahef/edit?js,output
 		evt.dragged; // dragged HTMLElement
 		evt.draggedRect; // DOMRect {left, top, right, bottom}
 		evt.related; // HTMLElement on which have guided
@@ -253,9 +253,9 @@ You can also define whether lists can give away, give and keep a copy (`clone`),
 
 
 Demo:
- - https://jsbin.com/hijetos/edit?js,output
- - https://jsbin.com/nacoyah/edit?js,output — use of complex logic in the `pull` and` put`
- - https://jsbin.com/bifuyab/edit?js,output — use `revertClone: true`
+ - http://jsbin.com/hijetos/edit?js,output
+ - http://jsbin.com/nacoyah/edit?js,output — use of complex logic in the `pull` and` put`
+ - http://jsbin.com/bifuyab/edit?js,output — use `revertClone: true`
 
 
 ---
@@ -264,7 +264,7 @@ Demo:
 #### `sort` option
 Allow sorting inside list.
 
-Demo: https://jsbin.com/jayedig/edit?js,output
+Demo: http://jsbin.com/jayedig/edit?js,output
 
 
 ---
@@ -274,7 +274,7 @@ Demo: https://jsbin.com/jayedig/edit?js,output
 Time in milliseconds to define when the sorting should start.
 Unfortunately, due to browser restrictions, delaying is not possible on IE or Edge with native drag & drop.
 
-Demo: https://jsbin.com/zosiwah/edit?js,output
+Demo: http://jsbin.com/zosiwah/edit?js,output
 
 
 ---
@@ -290,7 +290,7 @@ Whether or not the delay should be applied only if the user is using touch (eg. 
 #### `swapThreshold` option
 Percentage of the target that the swap zone will take up, as a float between `0` and `1`.
 
-[Read more](https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#swap-threshold)
+[Read more](http://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#swap-threshold)
 
 Demo: http://sortablejs.github.io/Sortable#thresholds
 
@@ -301,7 +301,7 @@ Demo: http://sortablejs.github.io/Sortable#thresholds
 #### `invertSwap` option
 Set to `true` to set the swap zone to the sides of the target, for the effect of sorting "in between" items.
 
-[Read more](https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#forcing-inverted-swap-zone)
+[Read more](http://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#forcing-inverted-swap-zone)
 
 Demo: http://sortablejs.github.io/Sortable#thresholds
 
@@ -312,7 +312,7 @@ Demo: http://sortablejs.github.io/Sortable#thresholds
 #### `invertedSwapThreshold` option
 Percentage of the target that the inverted swap zone will take up, as a float between `0` and `1`. If not given, will default to `swapThreshold`.
 
-[Read more](https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#dealing-with-swap-glitching)
+[Read more](http://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#dealing-with-swap-glitching)
 
 
 ---
@@ -321,7 +321,7 @@ Percentage of the target that the inverted swap zone will take up, as a float be
 #### `direction` option
 Direction that the Sortable should sort in. Can be set to `'vertical'`, `'horizontal'`, or a function, which will be called whenever a target is dragged over. Must return `'vertical'` or `'horizontal'`.
 
-[Read more](https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction)
+[Read more](http://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction)
 
 
 Example of direction detection for vertical list that includes full column and half column elements:
@@ -358,7 +358,7 @@ Values between 3 to 5 are good.
 #### `disabled` options
 Disables the sortable if set to `true`.
 
-Demo: https://jsbin.com/sewokud/edit?js,output
+Demo: http://jsbin.com/sewokud/edit?js,output
 
 ```js
 var sortable = Sortable.create(list);
@@ -379,7 +379,7 @@ To make list items draggable, Sortable disables text selection by the user.
 That's not always desirable. To allow text selection, define a drag handler,
 which is an area of every list element that allows it to be dragged around.
 
-Demo: https://jsbin.com/numakuh/edit?html,js,output
+Demo: http://jsbin.com/numakuh/edit?html,js,output
 
 ```js
 Sortable.create(el, {
@@ -432,7 +432,7 @@ Sortable.create(list, {
 #### `ghostClass` option
 Class name for the drop placeholder (default `sortable-ghost`).
 
-Demo: https://jsbin.com/henuyiw/edit?css,js,output
+Demo: http://jsbin.com/henuyiw/edit?css,js,output
 
 ```css
 .ghost {
@@ -453,7 +453,7 @@ Sortable.create(list, {
 #### `chosenClass` option
 Class name for the chosen item  (default `sortable-chosen`).
 
-Demo: https://jsbin.com/hoqufox/edit?css,js,output
+Demo: http://jsbin.com/hoqufox/edit?css,js,output
 
 ```css
 .chosen {
@@ -479,7 +479,7 @@ This gives us the possibility to test the behaviour for older Browsers even in n
 
 On top of that, the Fallback always generates a copy of that DOM Element and appends the class `fallbackClass` defined in the options. This behaviour controls the look of this 'dragged' Element.
 
-Demo: https://jsbin.com/sibiput/edit?html,css,js,output
+Demo: http://jsbin.com/sibiput/edit?html,css,js,output
 
 
 ---
@@ -519,7 +519,7 @@ By default, this option is `true`, meaning Sortable will remove the cloned eleme
 #### `emptyInsertThreshold` option
 The distance (in pixels) the mouse must be from an empty sortable while dragging for the drag element to be inserted into that sortable. Defaults to `5`. Set to `0` to disable this feature.
 
-Demo: https://jsbin.com/becavoj/edit?js,output
+Demo: http://jsbin.com/becavoj/edit?js,output
 
 An alternative to this option would be to set a padding on your list when it is empty.
 
@@ -533,10 +533,10 @@ ul:empty {
 Warning: For `:empty` to work, it must have no node inside (even text one).
 
 Demo:
-https://jsbin.com/yunakeg/edit?html,css,js,output
+http://jsbin.com/yunakeg/edit?html,css,js,output
 
 ---
-### Event object ([demo](https://jsbin.com/fogujiv/edit?js,output))
+### Event object ([demo](http://jsbin.com/fogujiv/edit?js,output))
 
  - to:`HTMLElement` — list, in which moved element
  - from:`HTMLElement` — previous list
@@ -642,11 +642,11 @@ Sortable.create(el, {
 
 <a name="bs"></a>
 ### Bootstrap
-Demo: https://jsbin.com/visimub/edit?html,js,output
+Demo: http://jsbin.com/visimub/edit?html,js,output
 
 ```html
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 
 
 <!-- Latest Sortable -->
@@ -738,7 +738,7 @@ Mounts a plugin to Sortable.
 * closest(el`:HTMLElement`, selector`:String`[, ctx`:HTMLElement`])`:HTMLElement|Null` — for each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree
 * clone(el`:HTMLElement`)`:HTMLElement` — create a deep copy of the set of matched elements
 * toggleClass(el`:HTMLElement`, name`:String`, state`:Boolean`) — add or remove one classes from each element
-* detectDirection(el`:HTMLElement`)`:String` — automatically detect the [direction](https://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction) of the element as either `'vertical'` or `'horizontal'`
+* detectDirection(el`:HTMLElement`)`:String` — automatically detect the [direction](http://github.com/SortableJS/Sortable/wiki/Swap-Thresholds-and-Direction#direction) of the element as either `'vertical'` or `'horizontal'`
 
 
 ---
@@ -746,12 +746,12 @@ Mounts a plugin to Sortable.
 
 ### Plugins
 #### Extra Plugins (included in complete versions)
- - [MultiDrag](https://github.com/SortableJS/Sortable/tree/master/plugins/MultiDrag)
- - [Swap](https://github.com/SortableJS/Sortable/tree/master/plugins/Swap)
+ - [MultiDrag](http://github.com/SortableJS/Sortable/tree/master/plugins/MultiDrag)
+ - [Swap](http://github.com/SortableJS/Sortable/tree/master/plugins/Swap)
 
 #### Default Plugins (included in default versions)
- - [AutoScroll](https://github.com/SortableJS/Sortable/tree/master/plugins/AutoScroll)
- - [OnSpill](https://github.com/SortableJS/Sortable/tree/master/plugins/OnSpill)
+ - [AutoScroll](http://github.com/SortableJS/Sortable/tree/master/plugins/AutoScroll)
+ - [OnSpill](http://github.com/SortableJS/Sortable/tree/master/plugins/OnSpill)
 
 
 ---
@@ -761,8 +761,8 @@ Mounts a plugin to Sortable.
 ### CDN
 
 ```html
-<!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<!-- jsDelivr :: Sortable :: Latest (http://www.jsdelivr.com/package/npm/sortablejs) -->
+<script src="http://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 ```
 
 
@@ -782,30 +782,30 @@ Please, [read this](CONTRIBUTING.md).
 ### Code Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/SortableJS/Sortable/graphs/contributors"><img src="https://opencollective.com/Sortable/contributors.svg?width=890&button=false" /></a>
+<a href="http://github.com/SortableJS/Sortable/graphs/contributors"><img src="http://opencollective.com/Sortable/contributors.svg?width=890&button=false" /></a>
 
 ### Financial Contributors
 
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/Sortable/contribute)]
+Become a financial contributor and help us sustain our community. [[Contribute](http://opencollective.com/Sortable/contribute)]
 
 #### Individuals
 
-<a href="https://opencollective.com/Sortable"><img src="https://opencollective.com/Sortable/individuals.svg?width=890"></a>
+<a href="http://opencollective.com/Sortable"><img src="http://opencollective.com/Sortable/individuals.svg?width=890"></a>
 
 #### Organizations
 
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/Sortable/contribute)]
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](http://opencollective.com/Sortable/contribute)]
 
-<a href="https://opencollective.com/Sortable/organization/0/website"><img src="https://opencollective.com/Sortable/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/1/website"><img src="https://opencollective.com/Sortable/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/2/website"><img src="https://opencollective.com/Sortable/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/3/website"><img src="https://opencollective.com/Sortable/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/4/website"><img src="https://opencollective.com/Sortable/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/5/website"><img src="https://opencollective.com/Sortable/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/6/website"><img src="https://opencollective.com/Sortable/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/7/website"><img src="https://opencollective.com/Sortable/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/8/website"><img src="https://opencollective.com/Sortable/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/Sortable/organization/9/website"><img src="https://opencollective.com/Sortable/organization/9/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/0/website"><img src="http://opencollective.com/Sortable/organization/0/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/1/website"><img src="http://opencollective.com/Sortable/organization/1/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/2/website"><img src="http://opencollective.com/Sortable/organization/2/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/3/website"><img src="http://opencollective.com/Sortable/organization/3/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/4/website"><img src="http://opencollective.com/Sortable/organization/4/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/5/website"><img src="http://opencollective.com/Sortable/organization/5/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/6/website"><img src="http://opencollective.com/Sortable/organization/6/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/7/website"><img src="http://opencollective.com/Sortable/organization/7/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/8/website"><img src="http://opencollective.com/Sortable/organization/8/avatar.svg"></a>
+<a href="http://opencollective.com/Sortable/organization/9/website"><img src="http://opencollective.com/Sortable/organization/9/avatar.svg"></a>
 
 ## MIT LICENSE
 Permission is hereby granted, free of charge, to any person obtaining

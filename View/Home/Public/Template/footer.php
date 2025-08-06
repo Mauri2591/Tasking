@@ -665,14 +665,14 @@
                 <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
             </div>
             <div class="col-6">
-                <a href="https://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
+                <a href="http://1.envato.market/velzon-admin" target="_blank" class="btn btn-primary w-100">Buy Now</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- JAVASCRIPT -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+<script src="http://code.jquery.com/jquery-3.6.4.min.js"
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
 <script
@@ -702,16 +702,16 @@
 <!-- App js -->
 <!-- <script src="<?php echo URL ?>/View/Home/Public/velzon/assets/js/app_mio.js?sheet=<?php echo rand(); ?>"></script> -->
 <script src="<?php echo URL ?>/View/Home/Public/velzon/assets/js/app.js?sheet=<?php echo rand(); ?>"></script>
-<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="http://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+<script src="http://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+<script src="http://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 
 <!-- Toastr JS -->
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="http://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <!-- Summernote -->
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js?sheet=<?php echo rand() ?>"></script>
+<script src="http://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js?sheet=<?php echo rand() ?>"></script>
 
 
 <!-- Modal Js -->
@@ -720,7 +720,7 @@
 </script>
 
 <!-- Charjs -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js?sheet=<?php echo rand() ?>"></script>
+<script src="http://cdn.jsdelivr.net/npm/chart.js?sheet=<?php echo rand() ?>"></script>
 
 </body>
 

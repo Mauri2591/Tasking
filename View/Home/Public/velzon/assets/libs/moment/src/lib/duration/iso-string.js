@@ -18,22 +18,22 @@ export function toISOString() {
     }
 
     var seconds = abs(this._milliseconds) / 1000;
-    var days         = abs(this._days);
-    var months       = abs(this._months);
+    var days = abs(this._days);
+    var months = abs(this._months);
     var minutes, hours, years;
 
     // 3600 seconds -> 60 minutes -> 1 hour
-    minutes           = absFloor(seconds / 60);
-    hours             = absFloor(minutes / 60);
+    minutes = absFloor(seconds / 60);
+    hours = absFloor(minutes / 60);
     seconds %= 60;
     minutes %= 60;
 
     // 12 months -> 1 year
-    years  = absFloor(months / 12);
+    years = absFloor(months / 12);
     months %= 12;
 
 
-    // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+    // inspired by http://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
     var Y = years;
     var M = months;
     var D = days;

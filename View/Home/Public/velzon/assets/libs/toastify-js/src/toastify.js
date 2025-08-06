@@ -1,22 +1,22 @@
 /*!
  * Toastify js 1.11.2
- * https://github.com/apvarun/toastify-js
+ * http://github.com/apvarun/toastify-js
  * @license MIT licensed
  *
  * Copyright (C) 2018 Varun A P
  */
-(function(root, factory) {
+(function (root, factory) {
   if (typeof module === "object" && module.exports) {
     module.exports = factory();
   } else {
     root.Toastify = factory();
   }
-})(this, function(global) {
+})(this, function (global) {
   // Object initialization
-  var Toastify = function(options) {
-      // Returning a new init object
-      return new Toastify.lib.init(options);
-    },
+  var Toastify = function (options) {
+    // Returning a new init object
+    return new Toastify.lib.init(options);
+  },
     // Library version
     version = "1.11.2";
 
@@ -41,9 +41,9 @@
     stopOnFocus: true,
     onClick: function () {
     },
-    offset: {x: 0, y: 0},
+    offset: { x: 0, y: 0 },
     escapeMarkup: true,
-    style: {background: ''}
+    style: { background: '' }
   };
 
   // Defining the prototype of the object
@@ -53,7 +53,7 @@
     constructor: Toastify,
 
     // Initializing the object with required parameters
-    init: function(options) {
+    init: function (options) {
       // Verifying and validating the input object
       if (!options) {
         options = {};
@@ -84,7 +84,7 @@
       this.options.offset = options.offset || Toastify.defaults.offset; // toast offset
       this.options.escapeMarkup = options.escapeMarkup !== undefined ? options.escapeMarkup : Toastify.defaults.escapeMarkup;
       this.options.style = options.style || Toastify.defaults.style;
-      if(options.backgroundColor) {
+      if (options.backgroundColor) {
         this.options.style.background = options.backgroundColor;
       }
 
@@ -93,7 +93,7 @@
     },
 
     // Building the DOM element
-    buildToast: function() {
+    buildToast: function () {
       // Validating if the options are defined
       if (!this.options) {
         throw "Toastify is not initialized";
@@ -168,7 +168,7 @@
         // Triggering the removal of toast from DOM on close click
         closeElement.addEventListener(
           "click",
-          function(event) {
+          function (event) {
             event.stopPropagation();
             this.removeElement(this.toastElement);
             window.clearTimeout(this.toastElement.timeOutValue);
@@ -195,16 +195,16 @@
         // stop countdown
         divElement.addEventListener(
           "mouseover",
-          function(event) {
+          function (event) {
             window.clearTimeout(divElement.timeOutValue);
           }
         )
         // add back the timeout
         divElement.addEventListener(
           "mouseleave",
-          function() {
+          function () {
             divElement.timeOutValue = window.setTimeout(
-              function() {
+              function () {
                 // Remove the toast from DOM
                 self.removeElement(divElement);
               },
@@ -218,7 +218,7 @@
       if (typeof this.options.destination !== "undefined") {
         divElement.addEventListener(
           "click",
-          function(event) {
+          function (event) {
             event.stopPropagation();
             if (this.options.newWindow === true) {
               window.open(this.options.destination, "_blank");
@@ -232,7 +232,7 @@
       if (typeof this.options.onClick === "function" && typeof this.options.destination === "undefined") {
         divElement.addEventListener(
           "click",
-          function(event) {
+          function (event) {
             event.stopPropagation();
             this.options.onClick();
           }.bind(this)
@@ -240,7 +240,7 @@
       }
 
       // Adding offset
-      if(typeof this.options.offset === "object") {
+      if (typeof this.options.offset === "object") {
 
         var x = getAxisOffsetAValue("x", this.options);
         var y = getAxisOffsetAValue("y", this.options);
@@ -257,7 +257,7 @@
     },
 
     // Displaying the toast
-    showToast: function() {
+    showToast: function () {
       // Creating the DOM object for the toast
       this.toastElement = this.buildToast();
 
@@ -285,7 +285,7 @@
 
       if (this.options.duration > 0) {
         this.toastElement.timeOutValue = window.setTimeout(
-          function() {
+          function () {
             // Remove the toast from DOM
             this.removeElement(this.toastElement);
           }.bind(this),
@@ -297,7 +297,7 @@
       return this;
     },
 
-    hideToast: function() {
+    hideToast: function () {
       if (this.toastElement.timeOutValue) {
         clearTimeout(this.toastElement.timeOutValue);
       }
@@ -305,14 +305,14 @@
     },
 
     // Removing the element from the DOM
-    removeElement: function(toastElement) {
+    removeElement: function (toastElement) {
       // Hiding the element
       // toastElement.classList.remove("on");
       toastElement.className = toastElement.className.replace(" on", "");
 
       // Removing the element from DOM after transition end
       window.setTimeout(
-        function() {
+        function () {
           // remove options node if any
           if (this.options.node && this.options.node.parentNode) {
             this.options.node.parentNode.removeChild(this.options.node);
@@ -335,7 +335,7 @@
   };
 
   // Positioning the toasts on the DOM
-  Toastify.reposition = function() {
+  Toastify.reposition = function () {
 
     // Top margins with gravity
     var topLeftOffsetSize = {
@@ -366,7 +366,7 @@
       }
 
       var height = allToasts[i].offsetHeight;
-      classUsed = classUsed.substr(9, classUsed.length-1)
+      classUsed = classUsed.substr(9, classUsed.length - 1)
       // Spacing between toasts
       var offset = 15;
 
@@ -400,8 +400,8 @@
   // Helper function to get offset.
   function getAxisOffsetAValue(axis, options) {
 
-    if(options.offset[axis]) {
-      if(isNaN(options.offset[axis])) {
+    if (options.offset[axis]) {
+      if (isNaN(options.offset[axis])) {
         return options.offset[axis];
       }
       else {

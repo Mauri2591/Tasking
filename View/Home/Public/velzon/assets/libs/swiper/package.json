@@ -115,7 +115,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nolimits4web/Swiper.git"
+    "url": "http://github.com/nolimits4web/Swiper.git"
   },
   "keywords": [
     "swiper",
@@ -141,13 +141,13 @@
   "author": "Vladimir Kharlampidi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nolimits4web/swiper/issues"
+    "url": "http://github.com/nolimits4web/swiper/issues"
   },
-  "homepage": "https://swiperjs.com",
+  "homepage": "http://swiperjs.com",
   "funding": [
     {
       "type": "patreon",
-      "url": "https://www.patreon.com/swiperjs"
+      "url": "http://www.patreon.com/swiperjs"
     },
     {
       "type": "open_collective",

@@ -8,7 +8,7 @@ use UnexpectedValueException;
 
 /**
  * JSON Web Key implementation, based on this spec:
- * https://tools.ietf.org/html/draft-ietf-jose-json-web-key-41
+ * http://tools.ietf.org/html/draft-ietf-jose-json-web-key-41
  *
  * PHP version 5
  *
@@ -16,7 +16,7 @@ use UnexpectedValueException;
  * @package  Authentication_JWT
  * @author   Bui Sy Nguyen <nguyenbs@gmail.com>
  * @license  http://opensource.org/licenses/BSD-3-Clause 3-clause BSD
- * @link     https://github.com/firebase/php-jwt
+ * @link     http://github.com/firebase/php-jwt
  */
 class JWK
 {
@@ -108,7 +108,7 @@ class JWK
                 // The "alg" parameter is optional in a KTY, but an algorithm is required
                 // for parsing in this library. Use the $defaultAlg parameter when parsing the
                 // key set in order to prevent this error.
-                // @see https://datatracker.ietf.org/doc/html/rfc7517#section-4.4
+                // @see http://datatracker.ietf.org/doc/html/rfc7517#section-4.4
                 throw new UnexpectedValueException('JWK must contain an "alg" parameter');
             }
             $jwk['alg'] = $defaultAlg;
@@ -205,17 +205,17 @@ class JWK
                         self::ASN1_OBJECT_IDENTIFIER,
                         self::encodeOID(self::OID)
                     )
-                    . self::encodeDER(
-                        self::ASN1_OBJECT_IDENTIFIER,
-                        self::encodeOID(self::EC_CURVES[$crv])
-                    )
+                        . self::encodeDER(
+                            self::ASN1_OBJECT_IDENTIFIER,
+                            self::encodeOID(self::EC_CURVES[$crv])
+                        )
                 ) .
-                self::encodeDER(
-                    self::ASN1_BIT_STRING,
-                    \chr(0x00) . \chr(0x04)
-                    . JWT::urlsafeB64Decode($x)
-                    . JWT::urlsafeB64Decode($y)
-                )
+                    self::encodeDER(
+                        self::ASN1_BIT_STRING,
+                        \chr(0x00) . \chr(0x04)
+                            . JWT::urlsafeB64Decode($x)
+                            . JWT::urlsafeB64Decode($y)
+                    )
             );
 
         return \sprintf(

@@ -46,8 +46,8 @@ final class Str
             @\mb_convert_encoding($input, 'UTF-8', $encoding);
         /**
          * this is for support UTF-8 with BOM encoding
-         * @see https://en.wikipedia.org/wiki/Byte_order_mark
-         * @see https://github.com/vlucas/phpdotenv/issues/500
+         * @see http://en.wikipedia.org/wiki/Byte_order_mark
+         * @see http://github.com/vlucas/phpdotenv/issues/500
          */
         if (\substr($converted, 0, 3) == "\xEF\xBB\xBF") {
             $converted = \substr($converted, 3);

@@ -1,6 +1,6 @@
 
 /* **********************************************
-     Begin prism-core.js
+	 Begin prism-core.js
 ********************************************** */
 
 /// <reference lib="WebWorker"/>
@@ -16,8 +16,8 @@ var _self = (typeof window !== 'undefined')
 /**
  * Prism: Lightweight, robust, elegant syntax highlighting
  *
- * @license MIT <https://opensource.org/licenses/MIT>
- * @author Lea Verou <https://lea.verou.me>
+ * @license MIT <http://opensource.org/licenses/MIT>
+ * @author Lea Verou <http://lea.verou.me>
  * @namespace
  * @public
  */
@@ -554,11 +554,11 @@ var Prism = (function (_self) {
 		 * It must have a class of `language-xxxx` to be processed, where `xxxx` is a valid language identifier.
 		 * @param {boolean} [async=false] Whether the element is to be highlighted asynchronously using Web Workers
 		 * to improve performance and avoid blocking the UI when highlighting very large chunks of code. This option is
-		 * [disabled by default](https://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
+		 * [disabled by default](http://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
 		 *
 		 * Note: All language definitions required to highlight the code must be included in the main `prism.js` file for
 		 * asynchronous highlighting to work. You can build your own bundle on the
-		 * [Download page](https://prismjs.com/download.html).
+		 * [Download page](http://prismjs.com/download.html).
 		 * @param {HighlightCallback} [callback] An optional callback to be invoked after the highlighting is done.
 		 * Mostly useful when `async` is `true`, since in that case, the highlighting is done asynchronously.
 		 * @memberof Prism
@@ -1189,7 +1189,7 @@ var Prism = (function (_self) {
 		// DOMContentLoaded event because there might be some plugins or languages which have also been deferred and they
 		// might take longer one animation frame to execute which can create a race condition where only some plugins have
 		// been loaded when Prism.highlightAll() is executed, depending on how fast resources are loaded.
-		// See https://github.com/PrismJS/prism/issues/2102
+		// See http://github.com/PrismJS/prism/issues/2102
 		var readyState = document.readyState;
 		if (readyState === 'loading' || readyState === 'interactive' && script && script.defer) {
 			document.addEventListener('DOMContentLoaded', highlightAutomaticallyCallback);
@@ -1266,7 +1266,7 @@ if (typeof global !== 'undefined') {
 
 
 /* **********************************************
-     Begin prism-markup.js
+	 Begin prism-markup.js
 ********************************************** */
 
 Prism.languages.markup = {
@@ -1279,7 +1279,7 @@ Prism.languages.markup = {
 		greedy: true
 	},
 	'doctype': {
-		// https://www.w3.org/TR/xml/#NT-doctypedecl
+		// http://www.w3.org/TR/xml/#NT-doctypedecl
 		pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
 		greedy: true,
 		inside: {
@@ -1455,7 +1455,7 @@ Prism.languages.rss = Prism.languages.xml;
 
 
 /* **********************************************
-     Begin prism-css.js
+	 Begin prism-css.js
 ********************************************** */
 
 (function (Prism) {
@@ -1481,7 +1481,7 @@ Prism.languages.rss = Prism.languages.xml;
 			}
 		},
 		'url': {
-			// https://drafts.csswg.org/css-values-3/#urls
+			// http://drafts.csswg.org/css-values-3/#urls
 			pattern: RegExp('\\burl\\((?:' + string.source + '|' + /(?:[^\\\r\n()"']|\\[\s\S])*/.source + ')\\)', 'i'),
 			greedy: true,
 			inside: {
@@ -1525,7 +1525,7 @@ Prism.languages.rss = Prism.languages.xml;
 
 
 /* **********************************************
-     Begin prism-clike.js
+	 Begin prism-clike.js
 ********************************************** */
 
 Prism.languages.clike = {
@@ -1562,7 +1562,7 @@ Prism.languages.clike = {
 
 
 /* **********************************************
-     Begin prism-javascript.js
+	 Begin prism-javascript.js
 ********************************************** */
 
 Prism.languages.javascript = Prism.languages.extend('clike', {
@@ -1713,7 +1713,7 @@ if (Prism.languages.markup) {
 	Prism.languages.markup.tag.addInlined('script', 'javascript');
 
 	// add attribute support for all DOM events.
-	// https://developer.mozilla.org/en-US/docs/Web/Events#Standard_events
+	// http://developer.mozilla.org/en-US/docs/Web/Events#Standard_events
 	Prism.languages.markup.tag.addAttribute(
 		/on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)/.source,
 		'javascript'
@@ -1724,7 +1724,7 @@ Prism.languages.js = Prism.languages.javascript;
 
 
 /* **********************************************
-     Begin prism-file-highlight.js
+	 Begin prism-file-highlight.js
 ********************************************** */
 
 (function () {
@@ -1733,7 +1733,7 @@ Prism.languages.js = Prism.languages.javascript;
 		return;
 	}
 
-	// https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill
+	// http://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill
 	if (!Element.prototype.matches) {
 		Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
 	}

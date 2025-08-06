@@ -1,5 +1,5 @@
 var tabla;
-var URL = "https://10.75.246.125/tasking_stg";
+var URL = "http://127.0.0.1/Tasking";
 //***************  Borradores  *****************************
 $(document).ready(function () {
     tabla = $("#table_proyectos_borrador").dataTable({
@@ -404,6 +404,8 @@ function gestionar_proy_borrador(proy_id, id_proyecto_cantidad_servicios, id) {
     }
     $.post("../../../../../Controller/ctrProyectos.php?proy=get_client_y_pais_para_proy_borrador", { proy_id: proy_id },
         function (data) {
+            console.log(data);
+
             const client_rs = data.client_rs;
             const fech_crea = data.fech_crea;
             const tituloDefault = `${client_rs}_${fech_crea}`;
@@ -425,8 +427,7 @@ function gestionar_proy_borrador(proy_id, id_proyecto_cantidad_servicios, id) {
     $.post("../../../../../Controller/ctrProyectos.php?proy=get_datos_proyecto_creado", { id_proyecto_cantidad_servicios: id_proyecto_cantidad_servicios },
         function (data, textStatus, jqXHR) {
             if (data != false) {
-
-
+                console.log(data);
 
                 if (data.posicion_recurrencia == null) {
                     document.getElementById("valor_recurrencia").style.display = "none";
@@ -604,6 +605,9 @@ function gestionar_proy_borrador(proy_id, id_proyecto_cantidad_servicios, id) {
                         }
                         if ($.fn.DataTable.isDataTable('#table_proyectos_en_proceso')) {
                             $('#table_proyectos_en_proceso').DataTable().ajax.reload(null, false);
+                        }
+                        if ($.fn.DataTable.isDataTable('#table_proyectos_recurrencia')) {
+                            $('#table_proyectos_recurrencia').DataTable().ajax.reload(null, false);
                         }
                     }, 500);
 
@@ -1139,14 +1143,14 @@ function gestionar_proy_borrador(proy_id, id_proyecto_cantidad_servicios, id) {
         }
     });
     function validarURL(url) {
-        return url.startsWith("http://") || url.startsWith("https://");
+        return url.startsWith("http://") || url.startsWith("http://");
     }
     function mostrarMensajeUrlInvalida(invalidas) {
         const contenedor = document.getElementById("mje_urls_proy_nuevo_eh");
         const lista = invalidas.map(url => `<li>${url}</li>`).join('');
         contenedor.innerHTML = `
         <div id="mje_validar_urls" class="alert alert-warning text-center" role="alert">
-            <strong>¡Error!</strong> Las siguientes URLs no comienzan con <code>http://</code> o <code>https://</code>:
+            <strong>¡Error!</strong> Las siguientes URLs no comienzan con <code>http://</code> o <code>http://</code>:
             <ul class="mb-0">${lista}</ul>
         </div>`;
     }
@@ -1236,7 +1240,7 @@ function validarIP(ip) {
 }
 
 function validarURL(url) {
-    return url.startsWith("http://") || url.startsWith("https://");
+    return url.startsWith("http://") || url.startsWith("http://");
 }
 
 function mostrarMensajeInvalido(lista, tipo) {
@@ -1244,7 +1248,7 @@ function mostrarMensajeInvalido(lista, tipo) {
     const items = lista.map(item => `<li>${item}</li>`).join('');
     const mensaje = tipo === "IP"
         ? `<strong>¡Error!</strong> Las siguientes IPs no son válidas:`
-        : `<strong>¡Error!</strong> Las siguientes URLs no comienzan con <code>http://</code> o <code>https://</code>:`;
+        : `<strong>¡Error!</strong> Las siguientes URLs no comienzan con <code>http://</code> o <code>http://</code>:`;
 
     contenedor.innerHTML = `
         <div class="alert alert-warning text-center" role="alert">

@@ -1,6 +1,6 @@
 **Important**
 
-If you're developer, I'm moving gmaps.js to NPM, you can give your opinion and check the migration progress in [Issue #404](https://github.com/hpneo/gmaps/issues/404)
+If you're developer, I'm moving gmaps.js to NPM, you can give your opinion and check the migration progress in [Issue #404](http://github.com/hpneo/gmaps/issues/404)
 
 ---
 
@@ -71,7 +71,7 @@ require.config({
 });
 ```
 
-Also, you can use the [googlemaps-amd](https://github.com/aerisweather/googlemaps-amd) plugin.
+Also, you can use the [googlemaps-amd](http://github.com/aerisweather/googlemaps-amd) plugin.
 
 Build
 ------
@@ -79,7 +79,7 @@ Build
 If you would like to build gmaps from source run the following at the terminal:
 
 ```sh
-git clone https://github.com/HPNeo/gmaps.git
+git clone http://github.com/HPNeo/gmaps.git
 cd gmaps
 npm install
 grunt

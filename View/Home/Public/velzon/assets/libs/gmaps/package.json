@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HPNeo/gmaps"
+    "url": "http://github.com/HPNeo/gmaps"
   },
   "author": "Gustavo Leon",
   "homepage": "http://hpneo.github.com/gmaps/",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HPNeo/gmaps/issues"
+    "url": "http://github.com/HPNeo/gmaps/issues"
   },
   "devDependencies": {
     "docdash": "^0.1.0",

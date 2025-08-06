@@ -1,7 +1,7 @@
 /**
  * simplebar - v6.0.0-beta.10
  * Scrollbars, simpler.
- * https://grsmto.github.io/simplebar/
+ * http://grsmto.github.io/simplebar/
  *
  * Made by Adrien Denat from a fork by Jonathan Nicol
  * Under MIT License
@@ -9,9 +9,10 @@
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('can-use-dom'), require('simplebar-core')) :
-  typeof define === 'function' && define.amd ? define(['can-use-dom', 'simplebar-core'], factory) :
-  (global = global || self, global.SimpleBar = factory(global.canUseDOM, global.SimpleBar));
-}(this, (function (canUseDOM, SimpleBar) { 'use strict';
+    typeof define === 'function' && define.amd ? define(['can-use-dom', 'simplebar-core'], factory) :
+      (global = global || self, global.SimpleBar = factory(global.canUseDOM, global.SimpleBar));
+}(this, (function (canUseDOM, SimpleBar) {
+  'use strict';
 
   canUseDOM = canUseDOM && Object.prototype.hasOwnProperty.call(canUseDOM, 'default') ? canUseDOM['default'] : canUseDOM;
   SimpleBar = SimpleBar && Object.prototype.hasOwnProperty.call(SimpleBar, 'default') ? SimpleBar['default'] : SimpleBar;

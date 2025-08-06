@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VincentGarreau/particles.js.git"
+    "url": "http://github.com/VincentGarreau/particles.js.git"
   },
   "keywords": [
     "particles",
@@ -19,7 +19,7 @@
   "author": "Vincent Garreau",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/VincentGarreau/particles.js/issues"
+    "url": "http://github.com/VincentGarreau/particles.js/issues"
   },
-  "homepage": "https://github.com/VincentGarreau/particles.js"
+  "homepage": "http://github.com/VincentGarreau/particles.js"
 }

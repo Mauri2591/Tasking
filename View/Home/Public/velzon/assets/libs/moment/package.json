@@ -3,13 +3,13 @@
     "version": "2.24.0",
     "description": "Parse, validate, manipulate, and display dates",
     "homepage": "http://momentjs.com",
-    "author": "Iskren Ivov Chernev <iskren.chernev@gmail.com> (https://github.com/ichernev)",
+    "author": "Iskren Ivov Chernev <iskren.chernev@gmail.com> (http://github.com/ichernev)",
     "contributors": [
         "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
         "Rocky Meza (http://rockymeza.com)",
         "Matt Johnson <mj1856@hotmail.com> (http://codeofmatt.com)",
         "Isaac Cambron <isaac@isaaccambron.com> (http://isaaccambron.com)",
-        "Andre Polykanine <andre@oire.org> (https://github.com/oire)"
+        "Andre Polykanine <andre@oire.org> (http://github.com/oire)"
     ],
     "keywords": [
         "moment",
@@ -30,10 +30,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/moment/moment.git"
+        "url": "http://github.com/moment/moment.git"
     },
     "bugs": {
-        "url": "https://github.com/moment/moment/issues"
+        "url": "http://github.com/moment/moment/issues"
     },
     "license": "MIT",
     "devDependencies": {

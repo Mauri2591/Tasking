@@ -5,7 +5,7 @@
   "main": "./src/toastify.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apvarun/toastify-js.git"
+    "url": "git+http://github.com/apvarun/toastify-js.git"
   },
   "keywords": [
     "toastify",
@@ -16,7 +16,7 @@
   "author": "Varun A P",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/apvarun/toastify-js/issues"
+    "url": "http://github.com/apvarun/toastify-js/issues"
   },
-  "homepage": "https://github.com/apvarun/toastify-js#readme"
+  "homepage": "http://github.com/apvarun/toastify-js#readme"
 }

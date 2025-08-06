@@ -13,7 +13,7 @@
 
                         <input type="hidden" hidden id="id_proyecto_cantidad_servicios">
                         <input type="hidden" hidden id="id_proyecto_gestionado">
-                        <input type="text" id="posicion_recurrencia">
+                        <input type="hidden" hidden id="posicion_recurrencia">
 
                         <span class="mb-2 badge bg-light border border-primary fs-10 text-primary"
                             style="font-weight: bold;">Datos del

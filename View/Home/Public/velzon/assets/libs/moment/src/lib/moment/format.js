@@ -5,7 +5,7 @@ import isFunction from '../utils/is-function';
 hooks.defaultFormat = 'YYYY-MM-DDTHH:mm:ssZ';
 hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
 
-export function toString () {
+export function toString() {
     return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
 }
 
@@ -33,9 +33,9 @@ export function toISOString(keepOffset) {
  * Return a human readable representation of a moment that can
  * also be evaluated to get a new moment which is the same
  *
- * @link https://nodejs.org/dist/latest/docs/api/util.html#util_custom_inspect_function_on_objects
+ * @link http://nodejs.org/dist/latest/docs/api/util.html#util_custom_inspect_function_on_objects
  */
-export function inspect () {
+export function inspect() {
     if (!this.isValid()) {
         return 'moment.invalid(/* ' + this._i + ' */)';
     }
@@ -53,7 +53,7 @@ export function inspect () {
     return this.format(prefix + year + datetime + suffix);
 }
 
-export function format (inputString) {
+export function format(inputString) {
     if (!inputString) {
         inputString = this.isUtc() ? hooks.defaultFormatUtc : hooks.defaultFormat;
     }

@@ -20,7 +20,7 @@
         rel="stylesheet" type="text/css" />
 
     <!-- Datatables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="http://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
 
     <!-- Icons Css -->
     <link href="<?php echo URL ?>/View/Home/Public/velzon/assets/css/icons.min.css?sheet=<?php echo rand(); ?>"
@@ -35,10 +35,10 @@
         href="<?php echo URL ?>\View\Home\Public\velzon\assets\css\icons.css?sheet=<?php echo rand(); ?>">
 
     <!-- Toastr CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <!-- include summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css?sheet=<?php echo rand() ?>"
+    <link href="http://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css?sheet=<?php echo rand() ?>"
         rel="stylesheet">
 
     <style>

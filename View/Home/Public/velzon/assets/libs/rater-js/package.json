@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git://github.com/fredolss/rater-js.git"
   },
-  "homepage": "https://fredolss.github.io/rater-js",
+  "homepage": "http://fredolss.github.io/rater-js",
   "types": "index.d.ts",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "author": {
     "name": "Fredrik Olsson",
     "email": "fredrik.olsson2@outlook.com",
-    "url": "https://github.com/fredolss"
+    "url": "http://github.com/fredolss"
   },
   "license": "MIT",
   "devDependencies": {

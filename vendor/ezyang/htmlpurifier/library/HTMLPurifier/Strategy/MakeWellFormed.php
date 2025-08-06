@@ -82,10 +82,10 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
         $stack = array();
 
         // member variables
-        $this->stack =& $stack;
-        $this->tokens =& $tokens;
-        $this->token =& $token;
-        $this->zipper =& $zipper;
+        $this->stack = &$stack;
+        $this->tokens = &$tokens;
+        $this->token = &$token;
+        $this->zipper = &$zipper;
         $this->config = $config;
         $this->context = $context;
 
@@ -151,8 +151,9 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
 
         // isset is in loop because $tokens size changes during loop exec
         for (;;
-             // only increment if we don't need to reprocess
-             $reprocess ? $reprocess = false : $token = $zipper->next($token)) {
+            // only increment if we don't need to reprocess
+            $reprocess ? $reprocess = false : $token = $zipper->next($token)
+        ) {
 
             // check for a rewind
             if (is_int($i)) {
@@ -360,7 +361,6 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
                         $reprocess = true;
                         continue;
                     }
-
                 }
                 $ok = true;
             }
@@ -538,7 +538,7 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
     protected function processToken($token, $injector = -1)
     {
         // Zend OpCache miscompiles $token = array($token), so
-        // avoid this pattern.  See: https://github.com/ezyang/htmlpurifier/issues/108
+        // avoid this pattern.  See: http://github.com/ezyang/htmlpurifier/issues/108
 
         // normalize forms of token
         if (is_object($token)) {
@@ -583,7 +583,6 @@ class HTMLPurifier_Strategy_MakeWellFormed extends HTMLPurifier_Strategy
         }
 
         return $r;
-
     }
 
     /**

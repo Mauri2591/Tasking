@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/woody180/vanilla-javascript-emoji-picker.git"
+    "url": "git+http://github.com/woody180/vanilla-javascript-emoji-picker.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/woody180/vanilla-javascript-emoji-picker/issues"
+    "url": "http://github.com/woody180/vanilla-javascript-emoji-picker/issues"
   },
-  "homepage": "https://github.com/woody180/vanilla-javascript-emoji-picker#readme"
+  "homepage": "http://github.com/woody180/vanilla-javascript-emoji-picker#readme"
 }

@@ -23,7 +23,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is either a letter or a digit, FALSE otherwise.
      *
-     * @see https://php.net/ctype-alnum
+     * @see http://php.net/ctype-alnum
      *
      * @param mixed $text
      *
@@ -39,7 +39,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a letter, FALSE otherwise.
      *
-     * @see https://php.net/ctype-alpha
+     * @see http://php.net/ctype-alpha
      *
      * @param mixed $text
      *
@@ -55,7 +55,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a control character from the current locale, FALSE otherwise.
      *
-     * @see https://php.net/ctype-cntrl
+     * @see http://php.net/ctype-cntrl
      *
      * @param mixed $text
      *
@@ -71,7 +71,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in the string text is a decimal digit, FALSE otherwise.
      *
-     * @see https://php.net/ctype-digit
+     * @see http://php.net/ctype-digit
      *
      * @param mixed $text
      *
@@ -87,7 +87,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is printable and actually creates visible output (no white space), FALSE otherwise.
      *
-     * @see https://php.net/ctype-graph
+     * @see http://php.net/ctype-graph
      *
      * @param mixed $text
      *
@@ -103,7 +103,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a lowercase letter.
      *
-     * @see https://php.net/ctype-lower
+     * @see http://php.net/ctype-lower
      *
      * @param mixed $text
      *
@@ -119,7 +119,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text will actually create output (including blanks). Returns FALSE if text contains control characters or characters that do not have any output or control function at all.
      *
-     * @see https://php.net/ctype-print
+     * @see http://php.net/ctype-print
      *
      * @param mixed $text
      *
@@ -135,7 +135,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is printable, but neither letter, digit or blank, FALSE otherwise.
      *
-     * @see https://php.net/ctype-punct
+     * @see http://php.net/ctype-punct
      *
      * @param mixed $text
      *
@@ -151,7 +151,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text creates some sort of white space, FALSE otherwise. Besides the blank character this also includes tab, vertical tab, line feed, carriage return and form feed characters.
      *
-     * @see https://php.net/ctype-space
+     * @see http://php.net/ctype-space
      *
      * @param mixed $text
      *
@@ -167,7 +167,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is an uppercase letter.
      *
-     * @see https://php.net/ctype-upper
+     * @see http://php.net/ctype-upper
      *
      * @param mixed $text
      *
@@ -183,7 +183,7 @@ final class Ctype
     /**
      * Returns TRUE if every character in text is a hexadecimal 'digit', that is a decimal digit or a character from [A-Fa-f] , FALSE otherwise.
      *
-     * @see https://php.net/ctype-xdigit
+     * @see http://php.net/ctype-xdigit
      *
      * @param mixed $text
      *
@@ -220,7 +220,7 @@ final class Ctype
         }
 
         if (\PHP_VERSION_ID >= 80100) {
-            @trigger_error($function.'(): Argument of type int will be interpreted as string in the future', \E_USER_DEPRECATED);
+            @trigger_error($function . '(): Argument of type int will be interpreted as string in the future', \E_USER_DEPRECATED);
         }
 
         if ($int < 0) {

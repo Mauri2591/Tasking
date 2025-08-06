@@ -3,7 +3,7 @@
   "version": "5.10.1",
   "title": "FullCalendar Standard Bundle",
   "description": "An easily consumable combination of standard plugins",
-  "docs": "https://fullcalendar.io/docs/initialize-globals",
+  "docs": "http://fullcalendar.io/docs/initialize-globals",
   "devDependencies": {
     "@fullcalendar/bootstrap": "~5.10.1",
     "@fullcalendar/core": "~5.10.1",
@@ -16,12 +16,12 @@
   "main": "main.js",
   "jsdelivr": "main.min.js",
   "browserGlobal": "FullCalendar",
-  "homepage": "https://fullcalendar.io/",
-  "bugs": "https://fullcalendar.io/reporting-bugs",
+  "homepage": "http://fullcalendar.io/",
+  "bugs": "http://fullcalendar.io/reporting-bugs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fullcalendar/fullcalendar.git",
-    "homepage": "https://github.com/fullcalendar/fullcalendar"
+    "url": "http://github.com/fullcalendar/fullcalendar.git",
+    "homepage": "http://github.com/fullcalendar/fullcalendar"
   },
   "license": "MIT",
   "author": {

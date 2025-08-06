@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/npm/security-holder.git"
+    "url": "git+http://github.com/npm/security-holder.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/npm/security-holder/issues"
+    "url": "http://github.com/npm/security-holder/issues"
   },
-  "homepage": "https://github.com/npm/security-holder#readme"
+  "homepage": "http://github.com/npm/security-holder#readme"
 }

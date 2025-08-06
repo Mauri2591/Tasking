@@ -2,11 +2,11 @@ Rater Js
 ========
 
 ![rater-js Logo](ratings.png)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/folssondev)
+[![Donate](http://img.shields.io/badge/Donate-PayPal-green.svg)](http://paypal.me/folssondev)
 [![NPM version][npm-image]][npm-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
-[![Build Status](https://travis-ci.org/fredolss/rater-js.svg?branch=master)](https://travis-ci.org/fredolss/rater-js)
+[![Build Status](http://travis-ci.org/fredolss/rater-js.svg?branch=master)](http://travis-ci.org/fredolss/rater-js)
 
 **rater-js** is a star rating widget for the browser.
 
@@ -119,10 +119,10 @@ element; //Get the element used by rater js
 ```
 
 
-[RaterJs]:https://fredolss.github.io/rater-js/example/  "RaterJs"
-[npm-image]: https://img.shields.io/npm/v/rater-js.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/rater-js
+[RaterJs]:http://fredolss.github.io/rater-js/example/  "RaterJs"
+[npm-image]: http://img.shields.io/npm/v/rater-js.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/rater-js
 [license-url]: LICENSE.md
-[license-image]: https://img.shields.io/:license-mit-blue.svg?style=flat-square
+[license-image]: http://img.shields.io/:license-mit-blue.svg?style=flat-square
 [downloads-image]: http://img.shields.io/npm/dm/rater-js.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/rater-js
+[downloads-url]: http://npmjs.org/package/rater-js

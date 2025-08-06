@@ -19,7 +19,7 @@
     "wNumb.min.js"
   ],
   "bugs": {
-    "url": "https://github.com/leongersen/wnumb/issues"
+    "url": "http://github.com/leongersen/wnumb/issues"
   },
   "devDependencies": {
     "prettier": "^1.18.2",

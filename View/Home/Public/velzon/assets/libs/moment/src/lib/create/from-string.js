@@ -4,8 +4,8 @@ import { configFromArray } from './from-array';
 import { hooks } from '../utils/hooks';
 import { deprecate } from '../utils/deprecate';
 import getParsingFlags from './parsing-flags';
-import {defaultLocaleMonthsShort} from '../units/month';
-import {defaultLocaleWeekdaysShort} from '../units/day-of-week';
+import { defaultLocaleMonthsShort } from '../units/month';
+import { defaultLocaleWeekdaysShort } from '../units/day-of-week';
 
 // iso 8601 regex
 // 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
@@ -97,7 +97,7 @@ export function configFromISO(config) {
     }
 }
 
-// RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
+// RFC 2822 regex: For details see http://tools.ietf.org/html/rfc2822#section-3.3
 var rfc2822 = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;
 
 function extractFromRFC2822Strings(yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr) {

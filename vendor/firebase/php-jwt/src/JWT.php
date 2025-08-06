@@ -14,7 +14,7 @@ use UnexpectedValueException;
 
 /**
  * JSON Web Token implementation, based on this spec:
- * https://tools.ietf.org/html/rfc7519
+ * http://tools.ietf.org/html/rfc7519
  *
  * PHP version 5
  *
@@ -23,7 +23,7 @@ use UnexpectedValueException;
  * @author   Neuman Vong <neuman@twilio.com>
  * @author   Anant Narayanan <anant@php.net>
  * @license  http://opensource.org/licenses/BSD-3-Clause 3-clause BSD
- * @link     https://github.com/firebase/php-jwt
+ * @link     http://github.com/firebase/php-jwt
  */
 class JWT
 {
@@ -421,7 +421,7 @@ class JWT
      * @return string A Base64 encoded string with standard characters (+/) and padding (=), when
      * needed.
      *
-     * @see https://www.rfc-editor.org/rfc/rfc4648
+     * @see http://www.rfc-editor.org/rfc/rfc4648
      */
     public static function convertBase64UrlToBase64(string $input): string
     {
@@ -521,8 +521,8 @@ class JWT
         ];
         throw new DomainException(
             isset($messages[$errno])
-            ? $messages[$errno]
-            : 'Unknown JSON error: ' . $errno
+                ? $messages[$errno]
+                : 'Unknown JSON error: ' . $errno
         );
     }
 
@@ -569,7 +569,7 @@ class JWT
         return self::encodeDER(
             self::ASN1_SEQUENCE,
             self::encodeDER(self::ASN1_INTEGER, $r) .
-            self::encodeDER(self::ASN1_INTEGER, $s)
+                self::encodeDER(self::ASN1_INTEGER, $s)
         );
     }
 

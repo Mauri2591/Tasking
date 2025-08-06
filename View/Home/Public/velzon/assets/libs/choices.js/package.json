@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jshjohnson/Choices.git"
+    "url": "git+http://github.com/jshjohnson/Choices.git"
   },
   "author": "Josh Johnson",
   "license": "MIT",
@@ -43,9 +43,9 @@
     "types"
   ],
   "bugs": {
-    "url": "https://github.com/jshjohnson/Choices/issues"
+    "url": "http://github.com/jshjohnson/Choices/issues"
   },
-  "homepage": "https://github.com/jshjohnson/Choices#readme",
+  "homepage": "http://github.com/jshjohnson/Choices#readme",
   "keywords": [
     "customisable",
     "input",

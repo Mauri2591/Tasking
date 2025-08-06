@@ -1,6 +1,6 @@
 //! moment.js locale configuration
 //! locale : Maori [mi]
-//! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
+//! author : John Corrigan <robbiecloset@gmail.com> : http://github.com/johnideal
 
 import moment from '../moment';
 
@@ -48,8 +48,8 @@ export default moment.defineLocale('mi', {
     },
     dayOfMonthOrdinalParse: /\d{1,2}º/,
     ordinal: '%dº',
-    week : {
-        dow : 1, // Monday is the first day of the week.
-        doy : 4  // The week that contains Jan 4th is the first week of the year.
+    week: {
+        dow: 1, // Monday is the first day of the week.
+        doy: 4  // The week that contains Jan 4th is the first week of the year.
     }
 });

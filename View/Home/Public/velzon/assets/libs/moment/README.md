@@ -1,9 +1,9 @@
-[![Join the chat at https://gitter.im/moment/moment](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/moment/moment?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at http://gitter.im/moment/moment](http://badges.gitter.im/Join%20Chat.svg)](http://gitter.im/moment/moment?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][downloads-url] [![MIT License][license-image]][license-url] [![Build Status][travis-image]][travis-url]
-[![Coverage Status](https://coveralls.io/repos/moment/moment/badge.svg?branch=develop)](https://coveralls.io/r/moment/moment?branch=develop)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment?ref=badge_shield)
-[![SemVer compatibility](https://api.dependabot.com/badges/compatibility_score?dependency-name=moment&package-manager=npm_and_yarn&version-scheme=semver)](https://dependabot.com/compatibility-score.html?dependency-name=moment&package-manager=npm_and_yarn&version-scheme=semver)
+[![Coverage Status](http://coveralls.io/repos/moment/moment/badge.svg?branch=develop)](http://coveralls.io/r/moment/moment?branch=develop)
+[![FOSSA Status](http://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment.svg?type=shield)](http://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment?ref=badge_shield)
+[![SemVer compatibility](http://api.dependabot.com/badges/compatibility_score?dependency-name=moment&package-manager=npm_and_yarn&version-scheme=semver)](http://dependabot.com/compatibility-score.html?dependency-name=moment&package-manager=npm_and_yarn&version-scheme=semver)
 
 A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
 
@@ -24,7 +24,7 @@ with `src/*`. We might place that in a commit hook in the future.
 
 ## Upgrading to 2.0.0
 
-There are a number of small backwards incompatible changes with version 2.0.0. [See the full descriptions here](https://gist.github.com/timrwood/e72f2eef320ed9e37c51#backwards-incompatible-changes)
+There are a number of small backwards incompatible changes with version 2.0.0. [See the full descriptions here](http://gist.github.com/timrwood/e72f2eef320ed9e37c51#backwards-incompatible-changes)
 
  * Changed language ordinal method to return the number + ordinal instead of just the ordinal.
 
@@ -38,28 +38,28 @@ There are a number of small backwards incompatible changes with version 2.0.0. [
 
  * Duplicate `Date` passed to `moment()` instead of referencing it.
 
-## [Changelog](https://github.com/moment/moment/blob/develop/CHANGELOG.md)
+## [Changelog](http://github.com/moment/moment/blob/develop/CHANGELOG.md)
 
-## [Contributing](https://github.com/moment/moment/blob/develop/CONTRIBUTING.md) [![Open Source Helpers](https://www.codetriage.com/moment/moment/badges/users.svg)](https://www.codetriage.com/moment/moment)
+## [Contributing](http://github.com/moment/moment/blob/develop/CONTRIBUTING.md) [![Open Source Helpers](http://www.codetriage.com/moment/moment/badges/users.svg)](http://www.codetriage.com/moment/moment)
 
 We're looking for co-maintainers! If you want to become a master of time please
-write to [ichernev](https://github.com/ichernev).
+write to [ichernev](http://github.com/ichernev).
 
-In addition to contributing code, you can help to triage issues. This can include reproducing bug reports, or asking for vital information such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to [subscribe to moment/moment on CodeTriage](https://www.codetriage.com/moment/moment).
+In addition to contributing code, you can help to triage issues. This can include reproducing bug reports, or asking for vital information such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to [subscribe to moment/moment on CodeTriage](http://www.codetriage.com/moment/moment).
 
 ## License
 
-Moment.js is freely distributable under the terms of the [MIT license](https://github.com/moment/moment/blob/develop/LICENSE).
+Moment.js is freely distributable under the terms of the [MIT license](http://github.com/moment/moment/blob/develop/LICENSE).
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment?ref=badge_large)
+[![FOSSA Status](http://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment.svg?type=large)](http://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmoment%2Fmoment?ref=badge_large)
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license-url]: LICENSE
 
-[npm-url]: https://npmjs.org/package/moment
+[npm-url]: http://npmjs.org/package/moment
 [npm-version-image]: http://img.shields.io/npm/v/moment.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/moment.svg?style=flat
-[downloads-url]: https://npmcharts.com/compare/moment?minimal=true
+[downloads-url]: http://npmcharts.com/compare/moment?minimal=true
 
 [travis-url]: http://travis-ci.org/moment/moment
 [travis-image]: http://img.shields.io/travis/moment/moment/develop.svg?style=flat
