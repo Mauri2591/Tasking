@@ -94,7 +94,7 @@ $(document).ready(function () {
     function get_datos_insert_cliente() {
         let formData = new FormData();
         formData.append('client_rs', document.getElementById("client_rs").value);
-        formData.append('pais_id', document.getElementById("pais_id_carga_proy_hidden").value);
+        formData.append('pais_id', document.getElementById("combo_paises").value);
         formData.append('client_cuit', document.getElementById("client_cuit").value);
         formData.append('client_correo', document.getElementById("client_correo").value);
         formData.append('client_tel', document.getElementById("client_tel").value);
